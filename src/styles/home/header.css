@@ -9,7 +9,7 @@
 }
 .header--scrolled{
   background-color: rgba(9, 15, 26, 0.4);
-  backdrop-filter: blur(10px);
+
   border-bottom: 1px solid rgba(125, 241, 255, 0.2);
 }
 .header__logo{
