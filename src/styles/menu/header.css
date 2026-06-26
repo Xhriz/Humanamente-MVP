@@ -1,0 +1,89 @@
+.header__profile{
+    display: flex;
+    align-items: center;
+}
+.header__profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+.header__profile-button{
+    background-color: transparent;
+    border:none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header__profile-container{
+    margin-left: 30px;
+    display: flex;
+    border-left: 1px solid white;
+    padding-left: 20px;
+    height: 40px;
+    align-items: center;
+}
+.header__profile-name{
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.header__menu{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: rgb(9, 15, 26);
+}
+.header__profile-team{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .header__profile {
+    margin-top: 10px;
+  }
+
+  .header__profile-container {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .header__profile-name {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .header__profile-team {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__profile-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header__profile-button {
+    font-size: 14px;
+  }
+
+  .header__profile-team {
+    width: 40px;
+    height: 40px;
+  }
+}

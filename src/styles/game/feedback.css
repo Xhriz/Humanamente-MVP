@@ -1,0 +1,228 @@
+.feedback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.feedback__header{
+    display: flex;
+    width: 970px;
+    justify-content: space-between;
+     align-items: center;
+     margin-bottom: 10px;
+}
+.feedback__title{
+    color: white;
+    font-size: 27px;
+    margin-bottom: 0;
+}
+.feedback__text{
+    color: rgb(185, 194, 203);
+    margin-top: 8px;
+}
+.feedback__results{
+    display: flex;
+    gap:20px
+}
+.feedback__button{
+ width: 100px;
+ height: 35px;
+ color: white;
+ background-color: rgb(39, 83, 156);
+ border:none;
+ border-radius: 8px;
+ cursor: pointer;
+}
+.feedback__button:hover{
+    background-color: rgb(46, 119, 246, 0.8);
+}
+
+.feedback__report{
+   display: flex;
+   justify-content: space-around;
+   width: 1000px;
+   animation: fadeInUp 0.8s ease-out;
+   gap: 20px;
+}
+.feedback__report-block{
+border: solid 1px rgb(125, 241, 255);
+ border-radius: 10px;
+ background-color: rgb(9, 15, 26);
+width:450px;
+padding-right: 18px;
+}
+.feedback__report-title{
+    color: white;
+    font-size: 23px;
+    margin-left: 20px;
+    margin-bottom:7px;
+    margin-top: 17px;
+}
+.feedback__report-description{
+    color:rgb(185, 194, 203);
+    margin: 0px 20px 25px;
+    border-bottom: 2px solid rgb(185, 194, 203, 0.6);
+    padding-bottom: 10px;
+}
+.feedback__report-text{
+    color:rgb(185, 194, 203);
+    margin-left: 20px;
+    font-size: 19px;
+    white-space: pre-wrap;
+}
+.feedback__block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.feedback__skills{
+border: solid 1px rgb(125, 241, 255);
+ border-radius: 10px;
+ background-color: rgb(9, 15, 26);
+ height:550px;
+ width: 500px;
+}
+.feedback__skills-title{
+ color: white;
+    font-size: 23px;
+    margin-left: 20px;
+    margin-bottom:7px;
+    margin-top: 17px;
+}
+.feedback__skills-text{
+    color:rgb(185, 194, 203);
+    margin: 0px 20px 35px;
+    
+}
+.feedback__restart{
+    margin-top: 80px;
+     background-color:rgb(30, 34, 42);
+    color: rgb(125, 241, 255);
+    border: rgb(125, 241, 255) solid 2px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    width:450px;
+    height: 40px;
+}
+.feedback__restart:hover{
+    background-color: rgb(125, 241, 255);
+    color: black;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback {
+    padding: 0 15px;
+  }
+
+  .feedback__header {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .feedback__title {
+    font-size: 22px;
+  }
+
+  .feedback__results {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .feedback__report {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feedback__report-block {
+    width: 100%;
+    padding-right: 15px;
+  }
+
+  .feedback__skills {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .feedback__restart {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback {
+    padding: 0 10px;
+  }
+
+  .feedback__header {
+    gap: 10px;
+  }
+
+  .feedback__title {
+    font-size: 18px;
+  }
+
+  .feedback__text {
+    font-size: 13px;
+  }
+
+  .feedback__button {
+    width: 80px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .feedback__report-block {
+    padding-right: 12px;
+  }
+
+  .feedback__report-title {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  .feedback__report-description {
+    margin: 0 15px 15px;
+    font-size: 13px;
+  }
+
+  .feedback__report-text {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .feedback__skills-title {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  .feedback__skills-text {
+    margin: 0 15px 20px;
+    font-size: 13px;
+  }
+
+  .feedback__restart {
+    max-width: 100%;
+    font-size: 14px;
+  }
+}

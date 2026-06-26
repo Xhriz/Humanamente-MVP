@@ -1,0 +1,290 @@
+.menu{
+    display: flex;
+    gap: 60px;
+}
+.menu__collumn{
+    margin-left: 50px;
+}
+.menu__skills{
+    border:solid 1px rgb(125, 241, 255);
+    width: 450px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgb(9, 15, 26);
+    margin-top: 40px;
+}
+.menu__title{
+    color: white;
+    font-size: 25px;
+    margin-top: 30px;
+   text-align: center;
+    margin-bottom: 7px;
+}
+.menu__subtitle{
+    color: rgb(185, 194, 203);
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.skills-radar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+}
+.menu__skill{
+    color: rgb(42, 133, 223);
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.menu__skill-bar{
+    border: solid 4px rgb(39, 83, 156);
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+.menu__instructions{
+  width: 320px;
+  height: 170px;
+  border:solid 1px rgb(125, 241, 255);
+  border-radius:15px;
+  padding:20px;
+  background-color: rgb(9, 15, 26);
+  margin-top: 40px;
+}
+.menu__instructions-title{
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+.menu__instructions-text{
+  color: rgb(185, 194, 203);
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.menu__fase{
+    border:solid 1px rgb(125, 241, 255);
+    width: 600px;
+    height: 645px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: rgb(9, 15, 26);
+    animation: fadeInUp 0.8s ease-out;
+}
+.menu__fase-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.menu__fase-nivel{
+    background-color: rgba(9, 207, 229, 0.8);
+    color: white;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.menu__fase-title{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.menu__fase-description{
+    color: rgb(185, 194, 203);
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 90px;
+}
+.menu__fase-skill-container{
+    display: flex;
+    margin:0;
+    justify-content: center;
+    gap: 10px;
+}
+.menu__fase-skill{
+    color: rgb(255, 255, 255);
+    background-color: rgb(39, 83, 156, 0.4);
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 7px 2px;
+    font-size: 12px;
+}
+.menu__fase-button{
+    background-color:rgb(30, 34, 42);
+    color: rgb(39, 83, 156);
+    border: rgb(39, 83, 156) solid 2px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px auto;
+    display: flex;
+    border-radius: 10px;
+    width:500px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.menu__fase-button:hover{
+    background-color: rgb(39, 83, 156);
+    color: white;  
+}
+
+.cenario__opitions{
+   display: flex;
+   flex-wrap:wrap;
+   gap: 30px;
+}
+.cenario__title{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.cenario__description{
+    color: rgb(185, 194, 203);
+    font-size: 18px;
+    margin:0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .menu__collumn {
+    margin-left: 0;
+  }
+
+  .menu__skills {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .menu__skill-bar {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .menu__instructions {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .menu__fase {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+  }
+
+  .menu__fase-button {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .cenario__opitions {
+    justify-content: center;
+  }
+
+  .cenario__title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .menu__skills {
+    max-width: 100%;
+  }
+
+  .menu__title {
+    font-size: 20px;
+  }
+
+  .menu__subtitle {
+    font-size: 13px;
+  }
+
+  .menu__skill {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .menu__skill-bar {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .menu__instructions {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menu__instructions-title {
+    font-size: 16px;
+  }
+
+  .menu__instructions-text {
+    font-size: 13px;
+  }
+
+  .menu__fase {
+    max-width: 100%;
+  }
+
+  .menu__fase-img {
+    height: 200px;
+  }
+
+  .menu__fase-title {
+    font-size: 22px;
+  }
+
+  .menu__fase-description {
+    font-size: 13px;
+  }
+
+  .menu__fase-skill {
+    font-size: 10px;
+    width: 120px;
+  }
+
+  .menu__fase-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cenario__title {
+    font-size: 22px;
+  }
+
+  .cenario__description {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,30 @@
+@import url('./home/header.css');
+@import url('./home/description.css');
+@import url('./home/cards.css');
+@import url('./home/footer.css');
+@import url('./menu/header.css');
+@import url('./menu/menu.css');
+@import url('./game/game.css');
+@import url('./game/history.css');
+@import url('./game/feedback.css');
+@import url('./Header.css');
+@import url('./login.css');
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: helvetica, sans-serif;
+  background-color: rgb(30, 34, 42);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
