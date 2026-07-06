@@ -98,8 +98,8 @@ border: solid 1px rgb(125, 241, 255);
 .feedback__restart{
     margin-top: 80px;
      background-color:rgb(30, 34, 42);
-    color: rgb(125, 241, 255);
-    border: rgb(125, 241, 255) solid 2px;
+    color: rgb(39, 83, 156);
+    border: rgb(39, 83, 156) solid 2px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -108,8 +108,8 @@ border: solid 1px rgb(125, 241, 255);
     height: 40px;
 }
 .feedback__restart:hover{
-    background-color: rgb(125, 241, 255);
-    color: black;
+     background-color: rgb(39, 83, 156);
+    color: white;
 }
 
 @keyframes fadeInUp {

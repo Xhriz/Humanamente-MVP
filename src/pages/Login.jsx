@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import image1 from "../assets/Image/2.png";
 
-export default function Login({ onSubmit, scrolled }) {
+export default function Login({ onSubmit, scrolled, back}) {
   const [teamName, setTeamName] = useState('');
 
   const handleSubmit = (e) => {
@@ -21,6 +21,8 @@ export default function Login({ onSubmit, scrolled }) {
       </header>
 
       <main className='login-container'>
+        <div className="login">
+          <p className='login__close' onClick={back}>X</p>
         <div className='login__box'>
           <h1 className='login__title'>Bem-vindo ao Humanamente</h1>
           <p className='login__subtitle'>Insira o nome da sua equipe para continuar</p>
@@ -41,6 +43,7 @@ export default function Login({ onSubmit, scrolled }) {
               Continuar
             </button>
           </form>
+        </div>
         </div>
       </main>
     </>

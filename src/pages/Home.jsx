@@ -101,7 +101,7 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
             
           <div className="cards__background">
            <div className='cards__container'>
-            <h2 className='cards__title'>Consciênia Situacional</h2>
+            <h2 className='cards__title'>Consciência Situacional</h2>
             <ul className='cards__list'>
               <SubCardItem title="Monitoramento" delay={0}>
                 <li className='cards__description-sub'>Monitorar os sistemas que influenciam a operação.</li>

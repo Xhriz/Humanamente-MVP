@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import '/styles/App.css';
+import './styles/App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Menu from './pages/menu';
@@ -69,6 +69,7 @@ return (
         <Login
           scrolled={scrolled}
           onSubmit={handleLoginSubmit}
+          back={() => setScreen("home")}
         />
       )}
 

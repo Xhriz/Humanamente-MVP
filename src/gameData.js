@@ -1,24 +1,33 @@
-import imageGame from "./assets/Image/game1.png";
-import imageGame2 from "./assets/Image/game2.png";
+//import imageGame from "./assets/Image/game1.png";
+//import imageGame2 from "./assets/Image/game2.png";
 import imageGame3 from "./assets/Image/game3.png";
 import imageGame4 from "./assets/Image/game4.png";
 import imageGame5 from "./assets/Image/game5.png";
 import imageGame6 from "./assets/Image/game6.png";
-import imageGame7 from "./assets/Image/game7.png";
+//import imageGame7 from "./assets/Image/game7.png";
 import imageGame8 from "./assets/Image/game8.png";
-import imageGame9 from "./assets/Image/game9.png";
+//import imageGame9 from "./assets/Image/game9.png";
 import imageGame10 from "./assets/Image/game10.png";
-//
-import imageGame11 from "./assets/Image/game11.png";
-import imageGame12 from "./assets/Image/game12.png";
-import imageGame13 from "./assets/Image/game13.png";
+
+//import imageGame11 from "./assets/Image/game11.png";
+//import imageGame12 from "./assets/Image/game12.png";
+//import imageGame13 from "./assets/Image/game13.png";
 import imageGame14 from "./assets/Image/game14.png";
 import imageGame15 from "./assets/Image/game15.png";
 import imageGame16 from "./assets/Image/game16.png";
 import imageGame17 from "./assets/Image/game17.png";
 import imageGame18 from "./assets/Image/game18.png";
-import imageGame19 from "./assets/Image/game19.png";
+//import imageGame19 from "./assets/Image/game19.png";
 import imageGame20 from "./assets/Image/game20.png";
+
+import imageGame21 from "./assets/Image/evento2.png";
+import imageGame22 from "./assets/Image/evento1.png";
+import imageGame23 from "./assets/Image/evento3.png";
+import imageGame24 from "./assets/Image/evento4.png";
+import imageGame25 from "./assets/Image/evento5.png";
+import imageGame26 from "./assets/Image/evento6.png";
+import imageGame27 from "./assets/Image/evento7.png";
+import imageGame28 from "./assets/Image/evento8.png";
 
 function seededShuffle(array, seed) {
   const shuffled = [...array];
@@ -39,7 +48,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Vazamento e Alarme de  H₂S",
-    image:imageGame,
+    image:imageGame22,
     descricao:"Os detectores AI‑98553 e AI‑98555 indicam H₂S próximo à B‑98508A/B. O painel registra queda de vazão na B‑98508A e aumento da temperatura no topo da fracionadora. A equipe de campo informa por rádio que o cheiro está forte. Sua primeira ação ao reconhecer o vazamento:",
     opcoes: [
       {
@@ -58,17 +67,17 @@ const gameData = [{
           "comunicacao": 3,
           "cooperacao": 3,
           "lideranca": 3,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 4,
         }
       },
       {
         texto: "Tentar confirmar as leituras analisando histórico de dados (trends, logs) por alguns minutos, esperando ver se a concentração de H₂S se mantém antes de declarar condição anormal.",
         notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 3,
           "consciencia_situacional": 3,
         }
       }
@@ -77,7 +86,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Vazamento e Alarme de  H₂S",
-    image:imageGame2,
+    image:imageGame21,
     descricao:"O alarme de gás tóxico é disparado. SMS e brigada são avisados. Parte da equipe se desloca para pontos de reunião. Alguns operadores de campo ainda estão na área, aguardando instruções claras. Como você organiza a resposta inicial:",
     opcoes: [
       {
@@ -93,9 +102,9 @@ const gameData = [{
       {
         texto: "Priorizar ajuste de processo no painel (corte de carga, redução de temperatura) e deixar a organização de campo para SMS e Supervisor.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
           "tomada_decisao": 3,
           "consciencia_situacional": 3,
         }
@@ -105,9 +114,9 @@ const gameData = [{
         notech:{
           "comunicacao": 3,
           "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       }
     ]
@@ -121,9 +130,9 @@ const gameData = [{
       {
         texto: "Reduzir carga da unidade e ajustar refluxo e pressão da coluna, comunicando claramente que o objetivo é estabilizar e reduzir inventário até entender o tamanho do vazamento.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
+          "comunicacao": 5,
+          "cooperacao": 5,
+          "lideranca": 5,
           "tomada_decisao": 4,
           "consciencia_situacional": 4,
         }
@@ -131,21 +140,21 @@ const gameData = [{
       {
         texto: "Manter carga por enquanto, ajustando apenas refluxo e controles, para “não impactar a produção” até haver certeza de que é necessário.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 3,
         }
       },
       {
         texto: "Pedir que a equipe de Engenharia decida sobre a estratégia de carga, enquanto você se concentra em acompanhar apenas os alarmes.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 4,
         }
       }
     ]
@@ -159,9 +168,9 @@ const gameData = [{
       {
         texto: "Reforçar que ninguém se aproxima sem autorização formal de SMS, exigir SCBA e detector portátil, e orientar inspeção visual a partir de posições protegidas.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
+          "comunicacao": 5,
+          "cooperacao": 5,
+          "lideranca": 5,
           "tomada_decisao": 4,
           "consciencia_situacional": 4,
         }
@@ -169,21 +178,21 @@ const gameData = [{
       {
         texto: "Permitir aproximação com EPI incompleto, “apenas para ver rápido”, considerando que a concentração de H₂S parece moderada.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       },
       {
         texto: "Suspender qualquer inspeção de campo até que todos os alarmes caiam, mantendo equipe apenas em posição de espera.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 4,
         }
       }
     ]
@@ -197,31 +206,31 @@ const gameData = [{
       {
         texto: "Isolar a bomba: ordenar fechamento das válvulas de sucção e descarga, solicitar desenergização elétrica da B‑98508A e reforçar cordão de segurança com brigada.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 4,
+          "comunicacao": 5,
+          "cooperacao": 5,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Tentar reestabelecer a operação da bomba ajustando apenas controles no painel, sem isolar imediatamente, para ver se a condição melhora.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       },
       {
         texto: "Focar apenas em monitorar os detectores de H₂S e deixar a questão da bomba para manutenção decidir depois.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       }
     ]
@@ -245,21 +254,21 @@ const gameData = [{
       {
         texto: "Assumir que “deve estar tudo certo” com base na primeira informação, sem revalidar passos com cada área.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       },
       {
         texto: "Focar apenas na interação com SMS, deixando de lado campo e painel, acreditando que “o importante é a segurança, o resto eles se viram”.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "comunicacao": 4,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 4,
         }
       }
     ]
@@ -267,24 +276,24 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Vazamento e Alarme de  H₂S",
-    image:imageGame7,
+    image:imageGame23,
     descricao:"A situação evolui e, por segurança, há forte indicação de corte total da carga fresca da unidade, conforme o cenário oficial (trip de bomba crítica, vazamento com H₂S, instabilidade). É necessário decidir o tipo de parada (emergencial vs. controlada). Sua decisão será:",
     opcoes: [
       {
         texto: "Confirmar corte de carga com painel, comunicar imediatamente Supervisor, Operadores de campo e SMS, e propor parada controlada se a situação estiver estabilizada.",
       notech:{
           "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
-          "tomada_decisao": 4,
+          "cooperacao": 5,
+          "lideranca": 5,
+          "tomada_decisao": 5,
           "consciencia_situacional": 4,
         }
       },
       {
         texto: "Defender parada emergencial imediata, mesmo com algumas informações ainda incompletas, priorizando risco zero.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
+          "comunicacao": 5,
+          "cooperacao": 5,
           "lideranca": 4,
           "tomada_decisao": 4,
           "consciencia_situacional": 4,
@@ -293,11 +302,11 @@ const gameData = [{
       {
         texto: "Adiar qualquer definição de tipo de parada até “mais dados” estarem disponíveis, mantendo a discussão aberta.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       }
     ]
@@ -311,31 +320,31 @@ const gameData = [{
       {
         texto: "Verificar desempenho de forno, estabilidade de carga e utilidades, ajustando V‑13 e outras variáveis para manter o nível dentro de faixa segura.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 3,
-          "tomada_decisao": 3,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 5,
           "consciencia_situacional": 4,
         }
       },
       {
         texto: "Tratar o aumento de nível como algo secundário, acreditando que “vai estabilizar sozinho” depois que o vazamento for resolvido.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 4,
         }
       },
       {
         texto: "Delegar completamente a análise de níveis à equipe de outra unidade, sem acompanhar ativamente.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       }
     ]
@@ -343,7 +352,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Vazamento e Alarme de  H₂S",
-    image:imageGame9,
+    image:imageGame24,
     descricao:"Após controlar vazamentos e pressões, a equipe precisa decidir como será o encaminhamento do equipamento e da unidade: limpeza, descoque, inspeções, reparos. O que fazer:",
     opcoes: [
       {
@@ -359,21 +368,21 @@ const gameData = [{
       {
         texto: "Propor um retorno rápido à operação, minimizando o tempo de parada, dando pouca ênfase ao aprendizado do evento.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 3,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       },
       {
         texto: "Deixar o encaminhamento totalmente nas mãos da manutenção, sem participar ativamente da definição.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 4,
+          "lideranca": 3,
+          "tomada_decisao": 3,
+          "consciencia_situacional": 3,
         }
       }
     ]
@@ -390,16 +399,16 @@ const gameData = [{
           "comunicacao": 5,
           "cooperacao": 4,
           "lideranca": 4,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 3,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 4,
         }
       },
       {
         texto: "Tratar o debriefing como formalidade, com participação mínima, mas presença física.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 3,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 4,
           "tomada_decisao": 3,
           "consciencia_situacional": 3,
         }
@@ -407,10 +416,10 @@ const gameData = [{
       {
         texto: "Evitar o debriefing, priorizando “voltar logo para a rotina”.",
       notech:{
-          "comunicacao": 1,
-          "cooperacao": 1,
-          "lideranca": 1,
-          "tomada_decisao": 1,
+          "comunicacao": 2,
+          "cooperacao": 2,
+          "lideranca": 2,
+          "tomada_decisao": 2,
           "consciencia_situacional": 3,
         }
       }
@@ -437,7 +446,7 @@ const gameData = [{
 {
     subtitle:"Operação em Equipe - Simples",
     title:"Parada de Manutenção Programada",
-    image:imageGame11,
+    image:imageGame26,
     descricao:"Na fase de Elaboração do Plano de Bloqueio e Raqueteamento, identificou-se que houve uma falha na identificação de um ponto de isolamento, onde uma raquete deveria ser inserida para isolar de uma determinada torre. Deverá ser feito:",
     opcoes: [
       {
@@ -475,7 +484,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Parada de Manutenção Programada",
-    image:imageGame12,
+    image:imageGame27,
     descricao:"O caldeireiro, por uma falha de comunicação e sem aguardar a emissão da devida permissão de trabalho, inicia atividades raqueteamento em uma caldeira sem a verificação dos riscos operacionais e sem o controle de segurança. A documentação de risco não foi validada para essa atividade específica. Como você organiza a resposta inicial:",
     opcoes: [
       {
@@ -513,7 +522,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Parada de Manutenção Programada",
-    image:imageGame13,
+    image:imageGame28,
     descricao:"Atenção! Foi detectada a presença de gás inflamável na área pelos sensores de gás, com os alarmes acionados. Qual a melhor decisão:",
     opcoes: [
       {
@@ -741,7 +750,7 @@ const gameData = [{
   {
     subtitle:"Operação em Equipe - Simples",
     title:"Parada de Manutenção Programada",
-    image:imageGame19,
+    image:imageGame25,
     descricao:"Durante um ajuste de vapor e ar, o operador de painel faz um ajuste inadequado na proporção, resultando em um aumento inesperado na temperatura de combustão no regenerador. Qual a melhor decisão:",
     opcoes: [
       {

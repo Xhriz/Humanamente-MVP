@@ -37,7 +37,6 @@
 .header__profile-team{
     width: 70px;
     height: 70px;
-    cursor: pointer;
     transition: transform 0.8s ease;
 }
 

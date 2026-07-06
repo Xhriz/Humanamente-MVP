@@ -1,8 +1,21 @@
+.login__close {
+  font-size: 33px;
+  color: rgba(125, 241, 255, 0.7);
+  cursor: pointer;
+  margin: 5px;
+  width: 23px;
+  transition: transform 0.5s ease;
+}
+.login__close:hover{
+  color: rgba(125, 241, 255, 1);
+  transform: scale(1.2);
+  
+}
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #090f1a 0%, #1a2a4a 100%);
 
 }

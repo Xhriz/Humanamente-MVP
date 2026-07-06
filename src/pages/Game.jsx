@@ -64,6 +64,7 @@ const playTimeUpSound = () => {
 export default function Game({ profileName, onGameEnd, onLogout, selectedScenario = 0 }) {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
   const [scores, setScores] = useState({
     comunicacao: 0,
     cooperacao: 0,
@@ -115,7 +116,24 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
   useEffect(() => {
     nextCalledRef.current = false;
     setTime(120);
+    setDisplayedText("");
   }, [scenarioIndex]);
+
+  useEffect(() => {
+    if (!fase.descricao) return;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index <= fase.descricao.length) {
+        setDisplayedText(fase.descricao.slice(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [fase.descricao, scenarioIndex]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -165,7 +183,7 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
                 </div>
                 <div className='game__description'>
                   <img className='game__description-img' src={fase.image} alt="Imagem do Game" />
-                  <p className='game__description-text'>{fase.descricao}</p>
+                  <p className='game__description-text'>{displayedText}</p>
                 </div>
                 <div className='game__options'>
                   <button className='game__option' onClick={() => handleOptionClick(0)}>{fase.opcoes[0].texto}</button>

@@ -41,6 +41,8 @@ export default function Menu({ onLogin, profileName, scores, onLogout}) {
                 <p className='menu__fase-skill'>Comunicação</p>
                 <p className='menu__fase-skill'>Consciência Situacional</p>
                 <p className='menu__fase-skill'>Liderança</p>
+                <p className='menu__fase-skill'>Tomada de Decisão</p>
+                <p className='menu__fase-skill'>Cooperação</p>
                 </div>
                 <button className='menu__fase-button' onClick={() => onLogin(0)}>Iniciar Treinamento</button>
             </div>
@@ -59,6 +61,8 @@ export default function Menu({ onLogin, profileName, scores, onLogout}) {
                 <p className='menu__fase-skill'>Comunicação</p>
                 <p className='menu__fase-skill'>Consciência Situacional</p>
                 <p className='menu__fase-skill'>Liderança</p>
+                <p className='menu__fase-skill'>Tomada de Decisão</p>
+                <p className='menu__fase-skill'>Cooperação</p>
                 </div>
                 <button className='menu__fase-button' onClick={() => onLogin(1)}>Iniciar Treinamento</button>
             </div>
