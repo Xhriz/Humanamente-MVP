@@ -11,7 +11,7 @@ export default function Header({ profileName, onLogout }) {
       </div>
       <div className='header__profile'>
         <img className='header__profile-img' src={imageProfile} alt="icone do historico" />
-        <button className='header__profile-button'>
+        <button className='header__profile-button' onClick={() => alert('Histórico de pontuação ainda não implementado')}>
           Histórico
         </button>
         <div className='header__profile-container'>

@@ -5,7 +5,7 @@ import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function End({onLogin, profileName, scores, selectedScenario, onLogout}) {
+export default function End({onLogin, profileName, scores, selectedScenario, onLogout, onMenu}) {
   const endContent = endData[selectedScenario] || endData[0];
 
   return (
@@ -18,6 +18,7 @@ export default function End({onLogin, profileName, scores, selectedScenario, onL
                   <p className='game__text'>{endContent.subtitle}</p>
                   <h2 className='game__title'>{endContent.title}</h2>
                 </div>
+                <button className='game__button' onClick={onMenu}>☰ Menu</button>
             </div>
             <div className='history__container'>
               <div className='history__description'>

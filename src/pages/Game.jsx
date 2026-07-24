@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import gameData from "../gameData";
 import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
-
+import alarm from "../assets/sounds/alarm.mp3";
 
 let audioContext = null;
 
@@ -14,6 +14,28 @@ const getAudioContext = () => {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
   }
   return audioContext;
+};
+
+const playBellSound = () => {
+  try {
+    const ctx = getAudioContext();
+    const oscillator = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    oscillator.frequency.value = 1200;
+    oscillator.type = 'sine';
+
+    gainNode.gain.setValueAtTime(0.4, ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+
+    oscillator.start(ctx.currentTime);
+    oscillator.stop(ctx.currentTime + 0.3);
+  } catch (e) {
+    console.log('Som desativado');
+  }
 };
 
 const playTickSound = () => {
@@ -61,7 +83,7 @@ const playTimeUpSound = () => {
   }
 };
 
-export default function Game({ profileName, onGameEnd, onLogout, selectedScenario = 0 }) {
+export default function Game({ profileName, onGameEnd, onLogout, onMenu, selectedScenario = 0 }) {
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -78,18 +100,33 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
   const scenarioData = gameData[0][cenarioKey];
   const fase = scenarioData[scenarioIndex];
 
-  const handleOptionClick = (optionIndex) => {
-    const selectedOption = fase.opcoes[optionIndex];
-    if (selectedOption.notech) {
-      setScores(prev => ({
-        comunicacao: prev.comunicacao + (selectedOption.notech.comunicacao || 0),
-        cooperacao: prev.cooperacao + (selectedOption.notech.cooperacao || 0),
-        lideranca: prev.lideranca + (selectedOption.notech.lideranca || 0),
-        tomada_decisao: prev.tomada_decisao + (selectedOption.notech.tomada_decisao || 0),
-        consciencia_situacional: prev.consciencia_situacional + (selectedOption.notech.consciencia_situacional || 0),
-      }));
+  const handleOptionClick = (optionIndex, buttonElement) => {
+    // Toca som de sino
+    playBellSound();
+
+    // Adiciona animação ao botão
+    if (buttonElement) {
+      buttonElement.classList.add('game__option--clicked');
     }
-    handleNextScenario();
+
+    // Desabilita cliques nos botões
+    const allButtons = document.querySelectorAll('.game__option');
+    allButtons.forEach(btn => btn.disabled = true);
+
+    // Aguarda um pouco e então processa a opção
+    setTimeout(() => {
+      const selectedOption = fase.opcoes[optionIndex];
+      if (selectedOption.notech) {
+        setScores(prev => ({
+          comunicacao: prev.comunicacao + (selectedOption.notech.comunicacao || 0),
+          cooperacao: prev.cooperacao + (selectedOption.notech.cooperacao || 0),
+          lideranca: prev.lideranca + (selectedOption.notech.lideranca || 0),
+          tomada_decisao: prev.tomada_decisao + (selectedOption.notech.tomada_decisao || 0),
+          consciencia_situacional: prev.consciencia_situacional + (selectedOption.notech.consciencia_situacional || 0),
+        }));
+      }
+      handleNextScenario();
+    }, 700);
   };
 
   const handleNextScenario = () => {
@@ -111,6 +148,11 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
       }
       return prev;
     });
+  };
+
+  const playAlarm = () => {
+    const audio = new Audio(alarm);
+    audio.play();
   };
 
   useEffect(() => {
@@ -158,7 +200,7 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
           }, 500);
           return 0;
         }
-        if (prev <= 30 && prev > 0) playTickSound();
+        if (prev <= 30 && prev > 0) playTickSound ();
         return prev - 1;
       });
     }, 1000);
@@ -176,19 +218,22 @@ export default function Game({ profileName, onGameEnd, onLogout, selectedScenari
                   <p className='game__text'>{fase.subtitle}</p>
                   <h2 className='game__title'>{fase.title}</h2>
                 </div>
+                <div className="game__header">
                 <div className="timer__circle">
                   <img className="timer__img" src={CronoImg} alt="Imagem do Cronômetro" />
                     <span className="timer__text">{time}s</span>
                   </div> 
+                  <button className='game__button' onClick={onMenu}>☰ Menu</button>
+                  </div>
                 </div>
                 <div className='game__description'>
                   <img className='game__description-img' src={fase.image} alt="Imagem do Game" />
                   <p className='game__description-text'>{displayedText}</p>
                 </div>
                 <div className='game__options'>
-                  <button className='game__option' onClick={() => handleOptionClick(0)}>{fase.opcoes[0].texto}</button>
-                  <button className='game__option' onClick={() => handleOptionClick(1)}>{fase.opcoes[1].texto}</button>
-                  <button className='game__option' onClick={() => handleOptionClick(2)}>{fase.opcoes[2].texto}</button>
+                  <button className='game__option' onClick={(e) => handleOptionClick(0, e.currentTarget)}>{fase.opcoes[0].texto}</button>
+                  <button className='game__option' onClick={(e) => handleOptionClick(1, e.currentTarget)}>{fase.opcoes[1].texto}</button>
+                  <button className='game__option' onClick={(e) => handleOptionClick(2, e.currentTarget)}>{fase.opcoes[2].texto}</button>
                 </div>
                 <div className='tip__container'>
                 <p className='tip'>ⓘ Dica: Não existe decisão perfeita. Existe decisão consciente.</p>

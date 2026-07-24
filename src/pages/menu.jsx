@@ -2,8 +2,41 @@ import imageMenu from "../assets/Image/h2s.png";
 import imageMenu2 from  "../assets/Image/descoque.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
+import { useState, useEffect } from "react";
 
-export default function Menu({ onLogin, profileName, scores, onLogout}) {
+const ROLE_COMPETENCIES = {
+  'Facilitador': 'Condução do cenário, observação do desempenho, mediação do debriefing',
+  'Operador de Painel': 'Monitorar variáveis via painel, ajustar proporções, atuar em alarmes',
+  'Operador de Área': 'Inspeções locais, verificação de válvulas, sensores e queimadores',
+  'Coordenador de Turno': 'Coordenação geral, decisões estratégicas, gerenciamento e comunicação entre áreas',
+  'Técnico de Manutenção': 'Suporte a equipamentos de controle e válvulas',
+  'Equipe de Emergência': 'Atuação em caso de falha crítica ou parada de emergência',
+  'Equipe de SMS': 'Garantir que as condições de segurança sejam mantidas, acionando os procedimentos de evacuação se necessário, e monitorando os limites de exposição a gases inflamáveis',
+  'Gerência de SMS': 'Garantir que os riscos sejam identificados e mitigados, e que as permissões de trabalho atendam aos critérios de segurança',
+  'Equipe de Planejamento': 'Responsável pela elaboração e emissão das permissões de trabalho para todas as atividades de manutenção',
+  'Gerente Geral': 'Responsável pela direção estratégica da unidade, alinhando decisões da parada às metas de segurança, produção e custo',
+  'Coordenador de Parada': 'Planejar e coordenar a execução global da parada, priorizando serviços, integrando áreas e gerindo o cronograma crítico',
+  'Coordenador de Planejamento Operacional de Parada': 'Traduzir o escopo da parada em janelas operacionais, sequências de bloqueio e desbloqueio, e estratégias de retorno à operação',
+  'Supervisor de Contratada': 'Acompanhar as equipes terceirizadas, garantir cumprimento de escopo, prazos e requisitos de segurança definidos pela contratante',
+  'Supervisor de Turno': 'Liderar a equipe de turno na execução das atividades, distribuir tarefas, acompanhar riscos e manter comunicação com coordenação de parada',
+  'Outros': 'Outro papel na equipe'
+};
+
+export default function Menu({ onLogin, profileName, scores, onLogout, onInstructions, selfAssessmentScores}) {
+  const [participants, setParticipants] = useState([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('login__participants');
+    if (stored) {
+      try {
+        setParticipants(JSON.parse(stored));
+      } catch (e) {
+        console.error('Error parsing participants:', e);
+        setParticipants([]);
+      }
+    }
+  }, []);
+
   return (
 
     <>
@@ -11,39 +44,64 @@ export default function Menu({ onLogin, profileName, scores, onLogout}) {
 
         <main>
         <section className='menu'>
-           <div className='menu__collumn'>
+          <div className='menu__collumn'>
           <div className='menu__skills'>
            <h2 className='menu__title'>Perfil de Habilidades da Equipe</h2>
            <p className='menu__subtitle'>Evolução de suas competências</p>
-           <SkillsRadarChart scores={scores}/>
+           <SkillsRadarChart scores={scores} selfAssessmentScores={selfAssessmentScores}/>
           </div>
           <div className='menu__instructions'>
                   <h2 className='menu__instructions-title'>Como Funciona</h2>
-                  <p className='menu__instructions-text'>1. Leia ao briefing do cenário.</p>
-                  <p className='menu__instructions-text'>2. Tome decisões sob pressão.</p>
+                  <p className='menu__instructions-text'>1. Leia o contexto do cenário.</p>
+                  <p className='menu__instructions-text'>2. Selecione suas opções.</p>
                   <p className='menu__instructions-text'>3. Veja os desdobramentos.</p>
-                  <p className='menu__instructions-text'>4. Receba feedback sobre suas escolhas.</p>
-                </div>
-                </div>
+                  <p className='menu__instructions-text'>4. Faça autoavaliação da equipe.</p>
+                  <p className='menu__instructions-text'>5. Receba feedback sobre suas decisões.</p>
+          </div>
+          <button className='menu__instructions-button' onClick={onInstructions}>Conceitos</button>
+          <h3 className='menu__participants-title'>Participantes</h3>
+          <table className="menu__table">
+                <thead>
+                  <tr>
+                    <th className="menu__table-header">Participante</th>
+                    <th className="menu__table-header">Função</th>
+                    <th className="menu__table-header">Competência</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {participants.map((participant, index) => (
+                    <tr key={index}>
+                      <td className="menu__table-cell">{participant.name}</td>
+                      <td className="menu__table-cell">{participant.role}</td>
+                      <td className="menu__table-cell">{ROLE_COMPETENCIES[participant.role] || ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+          </div>
           <div className= 'cenarios'>
-             <h2 className='cenario__title'>Cenários Disponíveis</h2>
+             <h2 className='cenario__title'>Cenários</h2>
              <p className='cenario__description'>Treine suas decisões com base em cenários reais da operação</p>
+          <div className='cenario__structure'>
+              <h3 className="cenario__structure-title">Estrutura dos Cenários</h3>
+              <p className="cenario__structure-text">1. A estrutura do conjunto de eventos suporta o desenvolvimento de cenários tanto com eventos complexos como eventos simples.<br></br>  <br></br>
+
+2. Eventos simples: não têm maiores consequências na condução operação, uma vez diagnosticados e corrigidos.<br></br><br></br>
+
+3. Eventos Complexos: Eventos complexos têm consequências contínuas que devem ser tratadas durante operação e não podem ser resolvidos simplesmente selecionando e executando uma lista de verificação.<br></br><br></br>
+
+4. Cenários baseados em conjuntos de eventos exigem ações coordenadas de todos os membros da equipe para conclusão bem-sucedida. Ele nunca será realmente resolvido, mas, em vez disso, deverá ser gerenciado nas várias fases da operação. O evento complexo não tem, necessariamente, uma única solução. Em vez disso, pode ter várias soluções possíveis e razoáveis. Assim, o evento bem projetado promove o gerenciamento de uma situação complexa.</p>
+            </div>
           <div className='cenario__opitions'>
           <div className='menu__fase'>
             <div className='menu__fase-card'>
             <img className='menu__fase-img' src={imageMenu} alt="Iniciante" />
             </div>
             <div className='menu__fase-info'>
-                <p className='menu__fase-nivel'>Simples</p>
+                <p className='menu__fase-nivel'>Complexo</p>
                 <h2 className='menu__fase-title'>Vazamento e Alarme de  H₂S</h2>
                 <p className='menu__fase-description'>Um alarme de gás tóxico é detectado nas proximidades da B‑98508A. A equipe aguarda sua orientação. Gerencie riscos, comunique com clareza e mantenha o controle sob pressão.</p>
-                <div className='menu__fase-skill-container'>
-                <p className='menu__fase-skill'>Comunicação</p>
-                <p className='menu__fase-skill'>Consciência Situacional</p>
-                <p className='menu__fase-skill'>Liderança</p>
-                <p className='menu__fase-skill'>Tomada de Decisão</p>
-                <p className='menu__fase-skill'>Cooperação</p>
-                </div>
+
                 <button className='menu__fase-button' onClick={() => onLogin(0)}>Iniciar Treinamento</button>
             </div>
 
@@ -54,16 +112,9 @@ export default function Menu({ onLogin, profileName, scores, onLogout}) {
             <img className='menu__fase-img' src={imageMenu2} alt="Iniciante" />
             </div>
             <div className='menu__fase-info'>
-                <p className='menu__fase-nivel'>Simples</p>
+                <p className='menu__fase-nivel'>Complexo</p>
                 <h2 className='menu__fase-title'>Parada de Manutenção Programada</h2>
                 <p className='menu__fase-description'>A unidade está operando com carga total e requer redução gradual para dar início à parada de manutenção. Parâmetros Iniciais Normais.</p>
-                <div className='menu__fase-skill-container'>
-                <p className='menu__fase-skill'>Comunicação</p>
-                <p className='menu__fase-skill'>Consciência Situacional</p>
-                <p className='menu__fase-skill'>Liderança</p>
-                <p className='menu__fase-skill'>Tomada de Decisão</p>
-                <p className='menu__fase-skill'>Cooperação</p>
-                </div>
                 <button className='menu__fase-button' onClick={() => onLogin(1)}>Iniciar Treinamento</button>
             </div>
           </div>

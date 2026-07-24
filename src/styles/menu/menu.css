@@ -1,14 +1,18 @@
 .menu{
     display: flex;
-    gap: 60px;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 .menu__collumn{
-    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 25px;
 }
 .menu__skills{
-    border:solid 1px rgb(125, 241, 255);
+    border:solid 2px rgb(125, 241, 255);
     width: 450px;
-    height: 500px;
+    height: 550px;
     border-radius: 10px;
     background-color: rgb(9, 15, 26);
     margin-top: 40px;
@@ -24,7 +28,7 @@
     color: rgb(185, 194, 203);
     margin-top: 0;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .skills-radar-container{
     display: flex;
@@ -45,31 +49,31 @@
     margin-top: 5px;
 }
 .menu__instructions{
-  width: 320px;
-  height: 170px;
-  border:solid 1px rgb(125, 241, 255);
+  width: 350px;
+  height: 190px;
+  border:solid 2px rgb(125, 241, 255);
   border-radius:15px;
   padding:20px;
   background-color: rgb(9, 15, 26);
-  margin-top: 40px;
+  margin-top: 25px;
 }
 .menu__instructions-title{
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 15px;
   margin-top: 5px;
 }
 .menu__instructions-text{
   color: rgb(185, 194, 203);
-  font-size: 16px;
+  font-size: 18px;
   margin: 10px 0;
 }
 
 .menu__fase{
-    border:solid 1px rgb(125, 241, 255);
+    border:solid 2px rgb(125, 241, 255);
     width: 640px;
-    height: 685px;
-    margin-top: 20px;
+    height: 625px;
+    margin-top: 0px;
     border-radius: 10px;
     background-color: rgb(9, 15, 26);
     animation: fadeInUp 0.8s ease-out;
@@ -104,23 +108,7 @@
     height: 90px;
     margin-bottom: 0px;
 }
-.menu__fase-skill-container{
-    display: flex;
-    flex-wrap: wrap;  
-    margin:0;
-    justify-content: center;
-    gap: 10px;
-}
-.menu__fase-skill{
-    color: rgb(255, 255, 255);
-    background-color: rgb(39, 83, 156, 0.4);
-    width: 150px;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 12px;
-    padding: 5px;
-    margin: 0px;
-}
+
 .menu__fase-button{
     background-color:rgb(30, 34, 42);
     color: rgb(39, 83, 156);
@@ -128,7 +116,7 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin: 30px auto;
+    margin: 10px auto;
     display: flex;
     border-radius: 10px;
     width:500px;
@@ -145,6 +133,7 @@
    display: flex;
    flex-wrap:wrap;
    gap: 30px;
+   margin-top: 40px;
 }
 .cenario__title{
     color: white;
@@ -156,6 +145,64 @@
     font-size: 18px;
     margin:0;
 }
+.menu__instructions-button{
+  width: 250px;
+  height: 35px;
+  color: white;
+  background-color: rgb(39, 83, 156);
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top:30px
+}
+.menu__instructions-button:hover{
+background-color: rgb(46, 119, 246, 0.8);
+}
+
+.menu__participants-title{
+  color: white;
+  font-size: 22px;
+  margin-top: 50px;
+}
+.menu__table{
+  border:solid 2px rgb(125, 241, 255);
+  border-radius:15px;
+  background-color: rgb(9, 15, 26);
+  text-align: center;
+}
+.menu__table-header{
+  padding: 10px;
+  font-size: 16px;
+    color: white;
+  border-bottom: solid 1px rgb(125, 241, 255);
+}
+.menu__table-cell{
+    color: rgb(185, 194, 203);
+  padding: 12px;
+  font-size: 14px;
+  width: 200px;
+  border-left: solid 1px rgb(125, 241, 255);
+}
+.cenario__structure{
+  border:solid 2px rgb(125, 241, 255);
+    border-radius: 10px;
+    background-color: rgb(9, 15, 26);
+    margin-top: 20px;
+    width:780px
+}
+.cenario__structure-title{
+  color: white;
+  font-size: 22px;
+  margin-top: 20px;
+  text-align: center;
+}
+.cenario__structure-text{
+  color: rgb(185, 194, 203);
+  font-size: 16px;
+  margin: 20px;
+}
+
 
 @keyframes fadeInUp {
   from {

@@ -3,10 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    padding: 30px 20px;
+    min-height: 896px;
 }
 .feedback__header{
     display: flex;
-    width: 970px;
+    width: 1060px;
     justify-content: space-between;
      align-items: center;
      margin-bottom: 10px;
@@ -15,6 +18,7 @@
     color: white;
     font-size: 27px;
     margin-bottom: 0;
+    font-weight: bold;
 }
 .feedback__text{
     color: rgb(185, 194, 203);
@@ -32,43 +36,45 @@
  border:none;
  border-radius: 8px;
  cursor: pointer;
+ font-weight: bold;
 }
 .feedback__button:hover{
-    background-color: rgb(46, 119, 246, 0.8);
+   background-color: rgb(46, 119, 246);
 }
 
 .feedback__report{
    display: flex;
    justify-content: space-around;
-   width: 1000px;
-   animation: fadeInUp 0.8s ease-out;
-   gap: 20px;
+   width: 1100px;
+   /* animation: fadeInUp 0.8s ease-out; */
+   gap: 10px;
 }
 .feedback__report-block{
-border: solid 1px rgb(125, 241, 255);
- border-radius: 10px;
- background-color: rgb(9, 15, 26);
-width:450px;
-padding-right: 18px;
+    border: solid 2px rgb(125, 241, 255);
+    border-radius: 10px;
+    background: rgb(9, 15, 26);
+    width:520px;
+    padding: 20px;
+    
 }
 .feedback__report-title{
     color: white;
     font-size: 23px;
-    margin-left: 20px;
     margin-bottom:7px;
     margin-top: 17px;
+    font-weight: bold;
 }
 .feedback__report-description{
-    color:rgb(185, 194, 203);
-    margin: 0px 20px 25px;
-    border-bottom: 2px solid rgb(185, 194, 203, 0.6);
+    color: rgb(185, 194, 203);
+    margin: 0 0 25px 0;
+    border-bottom: 2px solid rgb(125, 241, 255);
     padding-bottom: 10px;
 }
 .feedback__report-text{
-    color:rgb(185, 194, 203);
-    margin-left: 20px;
-    font-size: 19px;
+    color: rgb(185, 194, 203);
+    font-size: 16px;
     white-space: pre-wrap;
+    line-height: 1.6;
 }
 .feedback__block{
     display: flex;
@@ -77,27 +83,28 @@ padding-right: 18px;
     justify-content: center;
 }
 .feedback__skills{
-border: solid 1px rgb(125, 241, 255);
- border-radius: 10px;
- background-color: rgb(9, 15, 26);
- height:550px;
- width: 500px;
+    border: solid 2px rgb(125, 241, 255);
+    border-radius: 10px;
+    background: rgb(9, 15, 26);
+    height:600px;
+    width: 500px;
+    padding: 20px;
+    
 }
 .feedback__skills-title{
- color: white;
+    color: white;
     font-size: 23px;
-    margin-left: 20px;
     margin-bottom:7px;
-    margin-top: 17px;
+    margin-top: 0;
+    font-weight: bold;
 }
 .feedback__skills-text{
-    color:rgb(185, 194, 203);
-    margin: 0px 20px 35px;
-    
+    color: rgb(185, 194, 203);
+    margin: 0 0 35px 0;
 }
 .feedback__restart{
     margin-top: 80px;
-     background-color:rgb(30, 34, 42);
+    background-color:rgb(30, 34, 42);
     color: rgb(39, 83, 156);
     border: rgb(39, 83, 156) solid 2px;
     font-size: 16px;
@@ -108,8 +115,40 @@ border: solid 1px rgb(125, 241, 255);
     height: 40px;
 }
 .feedback__restart:hover{
-     background-color: rgb(39, 83, 156);
+    background-color: rgb(39, 83, 156);
     color: white;
+}
+
+@media print {
+  .feedback {
+    background: white !important;
+    color: #000 !important;
+  }
+
+  .feedback__title,
+  .feedback__report-title,
+  .feedback__skills-title {
+    color: #000 !important;
+    font-weight: bold !important;
+  }
+
+  .feedback__text,
+  .feedback__report-text,
+  .feedback__report-description,
+  .feedback__skills-text {
+    color: #333 !important;
+  }
+
+  .feedback__report-block,
+  .feedback__skills {
+    background: #ffffff !important;
+    border-color: #333 !important;
+  }
+
+  .feedback__button,
+  .feedback__restart {
+    display: none !important;
+  }
 }
 
 @keyframes fadeInUp {
@@ -225,4 +264,34 @@ border: solid 1px rgb(125, 241, 255);
     max-width: 100%;
     font-size: 14px;
   }
+}
+
+.skills-radar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.skills-radar-legend {
+  display: flex;
+  gap: 40px;
+  margin:0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(185, 194, 203);
+  font-size: 14px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
 }

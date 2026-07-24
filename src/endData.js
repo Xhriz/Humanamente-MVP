@@ -3,7 +3,7 @@ import imageEnd2 from "./assets/Image/cenarioend2.png";
 import videoHistory from "./assets/Video/videoend.mp4";
 
 const endData = [{
-  subtitle: "Operação em Equipe - Simples",
+  subtitle: "Cenário Complexo",
   title: "Vazamento e Alarme de H₂S",
   text: ` Após uma sequência de eventos críticos, a equipe conseguiu conduzir o vazamento de H₂S a um desfecho seguro. A bomba B‑98508A foi isolada, a energia cortada e a área delimitada. A carga fresca da unidade foi ajustada ou cortada conforme a condição, preservando a integridade da fracionadora e dos equipamentos associados.
 
@@ -16,7 +16,7 @@ const endData = [{
   video: videoHistory
 },
 {
-  subtitle: "Operação em Equipe - Simples",
+  subtitle: "Cenário Complexo",
   title: "Parada de Manutenção Programada",
   text: ` O incidente de segurança é contido sem maiores danos, a temperatura de combustão é estabilizada dentro da faixa segura, e as ações corretivas são implementadas para evitar danos ao regenerador.
   

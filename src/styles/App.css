@@ -9,6 +9,8 @@
 @import url('./game/feedback.css');
 @import url('./Header.css');
 @import url('./login.css');
+@import url('./game/selfassessment.css');
+@import url('./menu/instructions.css');
 
 body{
   padding: 0;

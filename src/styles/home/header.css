@@ -14,13 +14,12 @@
 }
 .header__logo{
   display:flex;
-  gap: 10px;
 }
 .header__img{
-  width: 40px;
-  height: 40px;
+  width: 65px;
+  height: 60px;
   border-radius: 12px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .header__name{
   font-weight:bold;

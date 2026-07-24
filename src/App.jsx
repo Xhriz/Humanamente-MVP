@@ -7,13 +7,15 @@ import Game from './pages/Game';
 import History from './pages/History';
 import Feedback from './pages/Feedback';
 import End from './pages/End'
+import SelfAssessment from './pages/selfassessment';
+import Instructions from './pages/Instructions';
 
 
 
 function App() {
   const [screen, setScreen] = useState(() => {
     const isLoggedIn = localStorage.getItem('header__profile-name');
-    return isLoggedIn ? "menu" : "home";
+    return isLoggedIn ? "instructions" : "home";
   });
   const [scrolled, setScrolled] = useState(false);
   const [profileName, setProfileName] = useState(() => {
@@ -24,6 +26,10 @@ function App() {
     return saved ? JSON.parse(saved) : null;
   });
   const [selectedScenario, setSelectedScenario] = useState(0);
+  const [selfAssessmentScores, setSelfAssessmentScores] = useState(() => {
+    const saved = localStorage.getItem('selfassessment__scores');
+    return saved ? JSON.parse(saved) : null;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +39,12 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLoginSubmit = (teamName) => {
+  const handleLoginSubmit = (teamName, participants) => {
     setProfileName(teamName);
     localStorage.setItem('header__profile-name', teamName);
     localStorage.setItem('login__timestamp', new Date().toISOString());
-    setScreen("menu");
+    localStorage.setItem('login__participants', JSON.stringify(participants || []));
+    setScreen("instructions");
   };
 
   const handleGameEnd = (scores) => {
@@ -49,9 +56,12 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('header__profile-name');
     localStorage.removeItem('user__scores');
+    localStorage.removeItem('selfassessment__scores');
     localStorage.removeItem('login__timestamp');
+    localStorage.removeItem('login__participants');
     setProfileName('');
     setGameScores(null);
+    setSelfAssessmentScores(null);
     setScreen("home");
   };
 
@@ -73,11 +83,13 @@ return (
         />
       )}
 
-      {screen === "menu" && <Menu profileName={profileName} scores={gameScores} onLogin={(scenarioIndex) => {setSelectedScenario(scenarioIndex); setScreen("history");}} onLogout={handleLogout}/>}
+      {screen === "instructions" && <Instructions profileName={profileName} onLogin={() => setScreen("menu")} onLogout={handleLogout}/>}
+      {screen === "menu" && <Menu profileName={profileName} scores={gameScores} onLogin={(scenarioIndex) => {setSelectedScenario(scenarioIndex); setScreen("history");}} selfAssessmentScores={selfAssessmentScores} onLogout={handleLogout} onInstructions={() => setScreen("instructions")}/>}
       {screen === "history" && <History profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("game")} back={() => setScreen("menu")} onLogout={handleLogout}/>}
-      {screen === "game" && <Game profileName={profileName} selectedScenario={selectedScenario} onGameEnd={handleGameEnd} onLogout={handleLogout}/>}
-      {screen === "end" && <End profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("feedback")} onLogout={handleLogout}/>}
-      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} onLogout={handleLogout}/>}
+      {screen === "game" && <Game profileName={profileName} selectedScenario={selectedScenario} onGameEnd={handleGameEnd} onLogout={handleLogout} onMenu={() => setScreen("menu")}/>}
+      {screen === "end" && <End profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("selfassessment")} onLogout={handleLogout} onMenu={() => setScreen("menu")}/>}
+      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} selfAssessmentScores={selfAssessmentScores} onLogout={handleLogout}/>}
+      {screen === "selfassessment" && <SelfAssessment profileName={profileName} onLogout={handleLogout} onMenu={() => setScreen("menu")} onFeedback={()=>{const saved = localStorage.getItem('selfassessment__scores'); setSelfAssessmentScores(saved ? JSON.parse(saved) : null); setScreen("feedback");}}/>}
     </div>
   );
 }

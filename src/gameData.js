@@ -1,23 +1,15 @@
-//import imageGame from "./assets/Image/game1.png";
-//import imageGame2 from "./assets/Image/game2.png";
 import imageGame3 from "./assets/Image/game3.png";
 import imageGame4 from "./assets/Image/game4.png";
 import imageGame5 from "./assets/Image/game5.png";
 import imageGame6 from "./assets/Image/game6.png";
-//import imageGame7 from "./assets/Image/game7.png";
 import imageGame8 from "./assets/Image/game8.png";
-//import imageGame9 from "./assets/Image/game9.png";
 import imageGame10 from "./assets/Image/game10.png";
 
-//import imageGame11 from "./assets/Image/game11.png";
-//import imageGame12 from "./assets/Image/game12.png";
-//import imageGame13 from "./assets/Image/game13.png";
 import imageGame14 from "./assets/Image/game14.png";
 import imageGame15 from "./assets/Image/game15.png";
 import imageGame16 from "./assets/Image/game16.png";
 import imageGame17 from "./assets/Image/game17.png";
 import imageGame18 from "./assets/Image/game18.png";
-//import imageGame19 from "./assets/Image/game19.png";
 import imageGame20 from "./assets/Image/game20.png";
 
 import imageGame21 from "./assets/Image/evento2.png";
@@ -46,7 +38,7 @@ function seededShuffle(array, seed) {
 const gameData = [{
   cenario1: [
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame22,
     descricao:"Os detectores AI‑98553 e AI‑98555 indicam H₂S próximo à B‑98508A/B. O painel registra queda de vazão na B‑98508A e aumento da temperatura no topo da fracionadora. A equipe de campo informa por rádio que o cheiro está forte. Sua primeira ação ao reconhecer o vazamento:",
@@ -84,7 +76,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame21,
     descricao:"O alarme de gás tóxico é disparado. SMS e brigada são avisados. Parte da equipe se desloca para pontos de reunião. Alguns operadores de campo ainda estão na área, aguardando instruções claras. Como você organiza a resposta inicial:",
@@ -122,7 +114,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame3,
     descricao:"O painel continua mostrando queda de vazão na B‑98508A, temperatura elevada no topo da fracionadora e instabilidade na pressão. A discussão agora é sobre corte de carga e estabilização da unidade. Como você atua no processo:",
@@ -160,7 +152,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame4,
     descricao:"O SMS autoriza aproximação controlada à área, com uso de respirador autônomo (SCBA) e detector portátil de H₂S. A equipe de campo se posiciona em área segura, à favor do vento, e aguarda instruções sobre inspeção visual da B‑98508A/B e entorno. O que fazer:",
@@ -198,7 +190,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame5,
     descricao:"A inspeção (quando ocorre) revela que há vazamento significativo na região da B‑98508A, possivelmente relacionado a falha de selagem. O operador informa que há líquido escorrendo próximo à bomba e possibilidade de emissão de H₂S e hidrocarbonetos. Qual sua decisão:",
@@ -236,7 +228,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame6,
     descricao:"Agora é necessário alinhar as ações entre painel, campo e SMS: garantir que a bomba esteja realmente isolada, que a energia esteja cortada e que as pressões estejam controladas. Também há discussão sobre evacuação da área ampliada. O que fazer:",
@@ -274,7 +266,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame23,
     descricao:"A situação evolui e, por segurança, há forte indicação de corte total da carga fresca da unidade, conforme o cenário oficial (trip de bomba crítica, vazamento com H₂S, instabilidade). É necessário decidir o tipo de parada (emergencial vs. controlada). Sua decisão será:",
@@ -312,7 +304,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame8,
     descricao:"Com a carga cortada, o nível do V‑98503 começa a subir devido a retornos e ajustes de V‑13. É necessário monitorar cuidadosamente para evitar transbordo ou condição de nível descontrolado. Sua atitude será:",
@@ -350,7 +342,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame24,
     descricao:"Após controlar vazamentos e pressões, a equipe precisa decidir como será o encaminhamento do equipamento e da unidade: limpeza, descoque, inspeções, reparos. O que fazer:",
@@ -388,7 +380,7 @@ const gameData = [{
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Vazamento e Alarme de  H₂S",
     image:imageGame10,
     descricao:"O evento foi controlado, a unidade foi estabilizada e as pessoas estão seguras. Agora, o foco é o debriefing, prática central do HumanaMente Fase 2. Sua decisão será:",
@@ -444,7 +436,7 @@ const gameData = [{
 
   cenario2:[
 {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame26,
     descricao:"Na fase de Elaboração do Plano de Bloqueio e Raqueteamento, identificou-se que houve uma falha na identificação de um ponto de isolamento, onde uma raquete deveria ser inserida para isolar de uma determinada torre. Deverá ser feito:",
@@ -452,9 +444,9 @@ const gameData = [{
       {
         texto: "Suspender temporariamente a aprovação do plano de raqueteamento daquela torre específica e sinalizar no sistema (ou prontuário físico) que o circuito está em revisão regulatória.",
         notech:{
-          "comunicacao": 5,
-          "cooperacao": 4,
-          "lideranca": 4,
+          "comunicacao": 4,
+          "cooperacao": 3,
+          "lideranca": 5,
           "tomada_decisao": 5,
           "consciencia_situacional": 5,
         }
@@ -463,26 +455,26 @@ const gameData = [{
         texto: "A engenharia de manutenção deve calcular/validar a espessura da nova raquete com base na pressão e temperatura de projeto daquela linha específica para garantir que ela suportará o bloqueio. ",
         notech:{
           "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 3,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "O supervisor de operação e o técnico de inspeção de equipamentos devem ir ao campo especificamente no flange esquecido.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "comunicacao": 4,
+          "cooperacao": 5,
+          "lideranca": 4,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 5,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame27,
     descricao:"O caldeireiro, por uma falha de comunicação e sem aguardar a emissão da devida permissão de trabalho, inicia atividades raqueteamento em uma caldeira sem a verificação dos riscos operacionais e sem o controle de segurança. A documentação de risco não foi validada para essa atividade específica. Como você organiza a resposta inicial:",
@@ -490,19 +482,19 @@ const gameData = [{
       {
         texto: "O Supervisor deve imediatamente parar a atividade, comunicar ao operador e questionar o caldeireiro sobre a permissão de trabalho.",
         notech:{
-          "comunicacao": 4,
+          "comunicacao": 5,
           "cooperacao": 4,
           "lideranca": 5,
-          "tomada_decisao": 4,
+          "tomada_decisao": 5,
           "consciencia_situacional": 5,
         }
       },
       {
         texto: "O Supervisor deve verificar se os riscos associados à atividade do caldeireiro estão identificados na documentação de riscos e garantir que os procedimentos sejam seguidos.",
         notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
           "tomada_decisao": 3,
           "consciencia_situacional": 3,
         }
@@ -510,17 +502,17 @@ const gameData = [{
       {
         texto: "O caldeireiro não precisava aguardar a emissão da permissão de trabalho para realizar uma atividade relacionada ao raqueteamento.",
         notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 1,
+          "cooperacao": 1,
+          "lideranca": 1,
+          "tomada_decisao": 1,
+          "consciencia_situacional": 1,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame28,
     descricao:"Atenção! Foi detectada a presença de gás inflamável na área pelos sensores de gás, com os alarmes acionados. Qual a melhor decisão:",
@@ -528,37 +520,37 @@ const gameData = [{
       {
         texto: "O Supervisor deve coordenar imediatamente a evacuação da área afetada e comunicar o incidente ao COTUR.",
       notech:{
-          "comunicacao": 4,
+          "comunicacao": 5,
           "cooperacao": 4,
-          "lideranca": 4,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 4,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "A Equipe de Segurança deve ativar o sistema de supressão de incêndios e realizar a monitorização contínua de gases inflamáveis. ",
       notech:{
           "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 2,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "O caldeireiro somente deve ser removido da área e instruído sobre os procedimentos corretos de segurança e permissões de trabalho.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
+          "comunicacao": 2,
+          "cooperacao": 2,
           "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "tomada_decisao": 1,
+          "consciencia_situacional": 1,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame14,
     descricao:"Durante a revisão da documentação de riscos, a equipe de planejamento não identificou um risco crítico existente relacionado ao sistema de vácuo do regenerador, que pode causar problemas de pressão durante a parada. Qual a melhor decisão:",
@@ -566,37 +558,37 @@ const gameData = [{
       {
         texto: "Convocar equipe multidisciplinar: Coordenador de planejamento, Gerente da parada, Grupo de Planejamento da Intervenção, Grupo de Planejamento de Manutenção, Planejador de materiais, SMS. Focar no sistema de regenerador e sistemas auxiliares. Se um risco crítico escapou, todo o estudo precisa de revalidação. ",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 4,
+          "comunicacao": 5,
+          "cooperacao": 5,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Acionar a equipe de Segurança de Processo e abrir desvio no sistema de gestão e tratar como incidente de quase-perda na fase de planejamento.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Fazer um comunicado formal para o Grupo de Planejamento de Manutenção bloqueando intervenções na unidade até reanálise concluída.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "comunicacao": 4,
+          "cooperacao": 3,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame15,
     descricao:"Tendo em vista que a elaboração das matrizes de Libra foi copiada da parada anterior sem a devida revisão da Lista de Bloqueios e sem considerar a atualização da planta, a Lista de Bloqueios está desatualizada. Qual a melhor decisão:",
@@ -607,34 +599,34 @@ const gameData = [{
           "comunicacao": 4,
           "cooperacao": 4,
           "lideranca": 4,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Fazer uma vistoria na área para conferir todas as etiquetas, posição, acessibilidade, estado de cada válvula de bloqueio, dreno, raquetes, etc.",
       notech:{
           "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Montar força-tarefa multidisciplinar para refazer LIBRA.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 5,
+          "cooperacao": 5,
+          "lideranca": 5,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 4,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame16,
     descricao:"Identificou-se a necessidade de identificar os riscos potenciais e introduzir medidas de controle para sua redução ou eliminação do risco ambiental durante a redução da carga para a parada de manutenção. Qual a melhor decisão:",
@@ -642,8 +634,8 @@ const gameData = [{
       {
         texto: "Na redução de carga da FCC têm-se pouco tempo e muito transiente. Deve-se focar em medidas de controle já existentes, sem depender de obra ou novos projetos, descrevendo uma lista de ações corretivas em caso de falha na identificação de um risco ambiental.",
       notech:{
-          "comunicacao": 5,
-          "cooperacao": 5,
+          "comunicacao": 3,
+          "cooperacao": 3,
           "lideranca": 4,
           "tomada_decisao": 4,
           "consciencia_situacional": 4,
@@ -652,27 +644,27 @@ const gameData = [{
       {
         texto: "A Gerência de SMS deve revisar a documentação de riscos e garantir que todos os riscos possíveis estejam corretamente identificados.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 4,
+          "tomada_decisao": 4,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Monitorar a unidade, comprovando que a fumaça do flare/chaminé do regenerador ficou dentro do padrão permitido pela licença de operação. Serve como contraprova se houver denúncia da comunidade ou auto de órgão ambiental.",
       notech:{
           "comunicacao": 3,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 3,
+          "cooperacao": 3,
+          "lideranca": 3,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 4,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame17,
     descricao:"A tarefa é reduzir gradualmente a carga da unidade mantendo o controle das variáveis da unidade. O ajuste correto da proporção de ar e vapor é crucial para garantir uma combustão eficiente e segura. Qual a melhor decisão:",
@@ -680,9 +672,9 @@ const gameData = [{
       {
         texto: "Redução gradual da carga.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
+          "comunicacao": 2,
+          "cooperacao": 2,
+          "lideranca": 3,
           "tomada_decisao": 4,
           "consciencia_situacional": 4,
         }
@@ -690,27 +682,27 @@ const gameData = [{
       {
         texto: "Ajuste de circulação de catalisador.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 4,
-          "lideranca": 4,
-          "tomada_decisao": 4,
-          "consciencia_situacional": 4,
+          "comunicacao": 2,
+          "cooperacao": 2,
+          "lideranca": 3,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Controle de ar e vapor.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 2,
+          "cooperacao": 2,
+          "lideranca": 3,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame18,
     descricao:"Durante uma redução de carga para 1.000–1.500 m³/d, as temperaturas das fases densa e diluída caíram para um patamar próximo a 620°C. Qual a melhor decisão:",
@@ -719,10 +711,10 @@ const gameData = [{
         texto: "Uma temperatura de regenerador próxima de 620 °C não exige, necessariamente, uma parada, mas costuma ser um sinal de que a unidade está se aproximando do limite inferior do balanço térmico.",
       notech:{
           "comunicacao": 3,
-          "cooperacao": 3,
+          "cooperacao": 2,
           "lideranca": 3,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
@@ -730,25 +722,25 @@ const gameData = [{
       notech:{
           "comunicacao": 2,
           "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "lideranca": 3,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Interromper temporariamente a redução de carga.",
       notech:{
-          "comunicacao": 2,
-          "cooperacao": 2,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "comunicacao": 3,
+          "cooperacao": 3,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame25,
     descricao:"Durante um ajuste de vapor e ar, o operador de painel faz um ajuste inadequado na proporção, resultando em um aumento inesperado na temperatura de combustão no regenerador. Qual a melhor decisão:",
@@ -756,10 +748,10 @@ const gameData = [{
       {
         texto: "Retornar a vazão para o valor anterior ou para a faixa prevista no procedimento operacional.",
       notech:{
-          "comunicacao": 4,
-          "cooperacao": 5,
-          "lideranca": 4,
-          "tomada_decisao": 4,
+          "comunicacao": 3,
+          "cooperacao": 2,
+          "lideranca": 3,
+          "tomada_decisao": 5,
           "consciencia_situacional": 4,
         }
       },
@@ -768,25 +760,25 @@ const gameData = [{
       notech:{
           "comunicacao": 3,
           "cooperacao": 3,
-          "lideranca": 3,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "lideranca": 4,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "O supervisor de turno deve avaliar o impacto da falha e determinar se há risco de danos ao equipamento, considerando uma possível necessidade de reduzir ainda mais a produção.",
       notech:{
-          "comunicacao": 2,
+          "comunicacao": 4,
           "cooperacao": 3,
-          "lideranca": 2,
-          "tomada_decisao": 2,
-          "consciencia_situacional": 2,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       }
     ]
   },
   {
-    subtitle:"Operação em Equipe - Simples",
+    subtitle:"Cenário Complexo",
     title:"Parada de Manutenção Programada",
     image:imageGame20,
     descricao:"O ajuste não foi corrigido rapidamente, e a temperatura de combustão ultrapassa o limite de segurança, aumentando o risco de danos térmicos aos componentes do regenerador. Qual a melhor decisão:",
@@ -794,31 +786,31 @@ const gameData = [{
       {
         texto: "O operador de painel deve ativar o sistema de resfriamento de emergência do regenerador.",
       notech:{
-          "comunicacao": 5,
-          "cooperacao": 4,
+          "comunicacao": 3,
+          "cooperacao": 3,
           "lideranca": 4,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 3,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Preparar antecipação da parada, suspendendo imediatamente a carga fresca e isolando fontes de hidrocarboneto.",
       notech:{
-          "comunicacao": 3,
-          "cooperacao": 3,
-          "lideranca": 3,
-          "tomada_decisao": 3,
-          "consciencia_situacional": 3,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       },
       {
         texto: "Acionar a parada emergencial para proteger a integridade do equipamento e comunicar a situação ao departamento de manutenção.",
       notech:{
-          "comunicacao": 1,
-          "cooperacao": 1,
-          "lideranca": 1,
-          "tomada_decisao": 1,
-          "consciencia_situacional": 1,
+          "comunicacao": 4,
+          "cooperacao": 4,
+          "lideranca": 5,
+          "tomada_decisao": 5,
+          "consciencia_situacional": 5,
         }
       }
     ]

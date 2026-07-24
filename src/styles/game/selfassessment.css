@@ -1,0 +1,261 @@
+.selfassessment{
+    width:90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.selfassessment__text{
+    width: 44%;
+}
+.selfassessment__header{
+    display: flex;
+    width:1170px;
+    justify-content: space-between;
+    align-items: center;
+}
+.selfassessment__title{
+    color:white;
+    margin-bottom: 10px;
+}
+.selfassessment__description{
+    color: rgb(185, 194, 203);
+    margin: 0px;
+    width: 90%;
+}
+.selfassessment__content{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    gap:20px;
+}
+.selfassessment__instructions{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.selfassessment__instructions-box{
+  width: 320px;
+  border:solid 2px rgb(125, 241, 255);
+  border-radius:15px;
+  padding:20px;
+  background-color: rgb(9, 15, 26);
+}
+.selfassessment__instructions-header{
+  display: flex;
+  gap:5px;
+}
+.selfassessment__instructions-icon{
+  width: 40px;
+  height: 40px;
+}
+.selfassessment__instructions-title{
+  color: white;
+  font-size: 26px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+.selfassessment__instructions-text{
+  color: rgb(185, 194, 203);
+  font-size: 19px;
+  margin: 10px 0;
+}
+.selfassessment__form-container{
+  width: 760px;
+  border:solid 2px rgb(125, 241, 255);
+  border-radius:15px;
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: rgb(9, 15, 26);
+}
+.selfassessment__form-title{
+color:white;
+border-bottom: solid 3px rgb(39, 83, 156);
+padding: 0px 13px 3px 15px;
+margin-bottom: 0px;
+}
+.selfassessment__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.selfassessment__button{
+   margin-top: 80px;
+     background-color:rgb(30, 34, 42);
+    color: rgb(39, 83, 156);
+    border: rgb(39, 83, 156) solid 2px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    width:450px;
+    height: 40px;
+}
+.selfassessment__button:hover:not(:disabled){
+     background-color: rgb(39, 83, 156);
+    color: white;
+}
+
+.selfassessment__button:disabled{
+    background-color: rgb(30, 34, 42);
+    color: rgb(100, 110, 130);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.selfassessment__form-section-title{
+   color: white;
+  font-size: 26px;
+  margin:0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.selfassessment__form-ask{
+    color: white;
+    font-size: 19px;
+    margin-top:0px;
+}
+.selfassessment__form-options-container{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.selfassessment__form-option-label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+.selfassessment__form-options{
+    display: none;
+}
+
+.selfassessment__form-option-label input:checked + .selfassessment__form-option-value{
+    background-color: rgb(39, 83, 156);
+    color: white;
+    transform: scale(1.1);
+}
+
+.selfassessment__form-option-value{
+    width: 80px;
+    height: 50px;
+    border: 2px solid rgb(125, 241, 255);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(185, 194, 203);
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    background-color: rgb(9, 15, 26);
+}
+.selfassessment__form-caption{
+    color: rgb(185, 194, 203);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+.selfassessment__form-option-label:hover .selfassessment__form-option-value{
+    border-color: rgb(39, 83, 156);
+    color: white;
+}
+
+/* Carrossel */
+.selfassessment__carousel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.selfassessment__section-counter{
+    color: rgb(125, 241, 255);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.selfassessment__carousel-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.selfassessment__carousel-btn{
+    background-color: rgb(39, 83, 156);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.selfassessment__carousel-btn:hover:not(:disabled){
+    background-color: rgb(30, 68, 128);
+    transform: scale(1.05);
+}
+
+.selfassessment__carousel-btn:disabled{
+    background-color: rgb(80, 90, 110);
+    color: rgb(120, 130, 150);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.selfassessment__dots{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex: 1;
+}
+
+.selfassessment__dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(80, 90, 110);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.selfassessment__dot:hover{
+    background-color: rgb(125, 241, 255);
+}
+
+.selfassessment__dot--active{
+    background-color: rgb(39, 83, 156);
+    width: 14px;
+    height: 14px;
+    border-color: rgb(125, 241, 255);
+}
+
+
+.selfassessment__table{
+width: 800px;
+height: 250px;
+  border:solid 2px rgb(125, 241, 255);
+  border-radius:15px;
+  padding: 20px;
+  background-color: rgb(9, 15, 26);
+  color: rgb(185, 194, 203);
+  text-align: center;
+  margin-bottom: 15px;
+}
+.selfassessment__table-cell{
+    border: 1px solid rgb(125, 241, 255);
+    border-radius: 5px;
+}

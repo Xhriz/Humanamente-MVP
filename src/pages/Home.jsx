@@ -47,13 +47,11 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
         <section className='description'>
           <img className='description__img' src={image2} alt="imagem da refinaria" />
           <div className='description__content'>
-            <p className='description__text'><span>⚡</span>Desenvolva Consciência Operacional</p>
             <h1 className='description__title'>
-              
               Treine suas Habilidades <span>Não Técnicas</span>
             </h1>
             <p className='description__content-text'>
-              Assuma papéis operacionais em simuladores reais. Tome decisões sob pressão e veja o impacto imediato na cultura de segurança e gestão de riscos.
+              A Fase 2 do Programa HumanaMente envolve uma simulação completa de situações que são representativas das operações do refino, gás e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
             </p>
             <button className='description__button' onClick={onStartGame}>
               Iniciar Treinamento →

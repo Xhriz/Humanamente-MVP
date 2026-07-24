@@ -3,7 +3,7 @@ import videoHistory from "./assets/Video/videoinity.mp4";
 import imageGame3 from "./assets/Image/cenario2history.png";
 
 const historyData = [{
-  subtitle: "Operação em Equipe - Simples",
+  subtitle: "Cenário Complexo",
   title: "Vazamento e Alarme de H₂S",
   text: `A unidade de coque da refinaria está operando em carga nominal. A B‑98508A, bomba crítica de circulação, mantém o fluxo de derivado para a fracionadora.
 
@@ -22,7 +22,7 @@ Leia o contexto, escolha sua ação em até 2 minutos e acompanhe a evolução d
   video: videoHistory
 },
 {
-  subtitle: "Operação em Equipe - Simples",
+  subtitle: "Cenário Complexo",
   title: "Parada de Manutenção Programada",
   text: `Vocês estão iniciando o turno na refinaria e devem revisar se todos protocolos estão conforme e se todos os setores então cientes da parada da FCC para a manutenção. Cada equipe confirma o recebimento da programação e começa a revisar os procedimentos.
 
