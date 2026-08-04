@@ -2,6 +2,8 @@ import { useState } from 'react';
 import image1 from "../assets/Image/2.png";
 import interrogacao from "../assets/Image/interrogacao.png";
 
+const TEAM_NAMES = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
+
 const AVAILABLE_ROLES = [
   { id: 'facilitador', label: 'Facilitador', tooltip: 'Condução do cenário, observação do desempenho, mediação do debriefing' },
   { id: 'operador_painel', label: 'Operador de Painel', tooltip: 'Monitorar variáveis via painel, ajustar proporções, atuar em alarmes' },
@@ -49,6 +51,12 @@ export default function Login({ onSubmit, scrolled, back }) {
     setAddedRoles(prev => prev.map(r => r.id === id ? { ...r, name: value } : r));
   };
 
+  const isFormValid = () => {
+    if (!teamName.trim()) return false;
+    if (addedRoles.length === 0) return true;
+    return addedRoles.every(r => r.name.trim().length >= 3 && r.name.trim().length < 30);
+  };
+
   const getNameErrorMessage = (name) => {
     if (!name || name.trim().length === 0) {
       return 'Campo obrigatório';
@@ -58,17 +66,11 @@ export default function Login({ onSubmit, scrolled, back }) {
       const needed = 3 - length;
       return `Faltam ${needed} ${needed === 1 ? 'caractere' : 'caracteres'}`;
     }
-    if (length >= 20) {
-      const excess = length - 19;
+    if (length >= 30) {
+      const excess = length - 29;
       return `Excede ${excess} ${excess === 1 ? 'caractere' : 'caracteres'}`;
     }
     return '';
-  };
-
-  const isFormValid = () => {
-    if (!teamName.trim()) return false;
-    if (addedRoles.length === 0) return true;
-    return addedRoles.every(r => r.name.trim().length >= 3 && r.name.trim().length < 20);
   };
 
   const handleSubmit = (e) => {
@@ -93,20 +95,20 @@ export default function Login({ onSubmit, scrolled, back }) {
           <p className='login__close' onClick={back}>X</p>
           <div className='login__box'>
             <h1 className='login__title'>Bem-vindo ao Humanamente</h1>
-            <p className='login__subtitle'>Insira o nome da sua equipe para continuar</p>
+            <p className='login__subtitle'>Selecione o nome da sua equipe para continuar</p>
 
             <form className='login__form' onSubmit={handleSubmit}>
-              <input
-                type='text'
-                className='login__input'
-                placeholder='Nome da Equipe'
+              <select
+                className='login__input login__select-team'
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
-                autoFocus
-                maxLength={40}
-                minLength={3}
                 required
-              />
+              >
+                <option value=''>Selecione a equipe...</option>
+                {TEAM_NAMES.map(name => (
+                  <option key={name} value={name}>{name}</option>
+                ))}
+              </select>
 
               <h2 className='login__actors'>Papéis da Equipe</h2>
               <p className='login__roles-hint'>Selecione os papéis que sua equipe possui (opcional)</p>
@@ -146,7 +148,7 @@ export default function Login({ onSubmit, scrolled, back }) {
                         onClick={() => handleRemoveRole(role.id)}
                         aria-label={`Remover ${role.label}`}
                       >
-                        ✕
+                        X
                       </button>
                     </div>
                   </div>
@@ -157,7 +159,7 @@ export default function Login({ onSubmit, scrolled, back }) {
                     value={role.name}
                     onChange={(e) => handleRoleNameChange(role.id, e.target.value)}
                     minLength={3}
-                    maxLength={19}
+                    maxLength={30}
                     required
                   />
                   {getNameErrorMessage(role.name) && (

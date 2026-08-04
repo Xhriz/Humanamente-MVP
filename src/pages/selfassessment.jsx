@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import icon from '../assets/Image/info.png';
+import { useScrollTop } from '../hooks/useScrollTop';
+import { useEffect } from 'react';
 
-export default function SelfAssessment({ profileName, onLogout, onMenu, onFeedback }) {
+export default function SelfAssessment({ profileName, onLogout, onMenu, onFeedback, onHome }) {
+  useScrollTop();
   const [responses, setResponses] = useState({});
   const [currentSection, setCurrentSection] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentSection]);
 
   const handleResponse = (questionId, value) => {
     setResponses(prev => ({
@@ -129,7 +136,7 @@ export default function SelfAssessment({ profileName, onLogout, onMenu, onFeedba
 
   return (
     <>
-      <Header profileName={profileName} onLogout={onLogout} />
+      <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
       <main className='selfassessment'>
         <div className='selfassessment__header'>
           <div className='selfassessment__text'>

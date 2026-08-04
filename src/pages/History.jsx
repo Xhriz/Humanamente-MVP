@@ -3,12 +3,14 @@ import imageProfile from "../assets/Image/historico.png";
 import historyData from "../historyData";
 import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
+import { useScrollTop } from "../hooks/useScrollTop";
 
-export default function History({onLogin, profileName, scores, back, onLogout, selectedScenario = 0}) {
+export default function History({onLogin, profileName, scores, back, onLogout, selectedScenario = 0, onHome}) {
+  useScrollTop();
 
   return (
     <div>
-    <Header profileName={profileName} onLogout={onLogout} />
+    <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
             <main>
             <section className='history'>
               <button className="history__button-back" onClick={back}>⬅ Voltar</button>

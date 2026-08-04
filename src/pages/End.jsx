@@ -1,16 +1,17 @@
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
-import endData from "../endData";
-import imageTeam from "../assets/Image/equip.png";
-import Header from "../components/Header";
-import SkillsRadarChart from "../components/SkillsRadarChart";
 
-export default function End({onLogin, profileName, scores, selectedScenario, onLogout, onMenu}) {
+import endData from "../endData";
+
+import Header from "../components/Header";
+
+import { useScrollTop } from "../hooks/useScrollTop";
+
+export default function End({onLogin, profileName, selectedScenario, onLogout, onMenu, onHome}) {
+  useScrollTop();
   const endContent = endData[selectedScenario] || endData[0];
 
   return (
     <div>
-    <Header profileName={profileName} onLogout={onLogout} />
+    <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
             <main>
             <section className='history'>
             <div className='game__container-history'>

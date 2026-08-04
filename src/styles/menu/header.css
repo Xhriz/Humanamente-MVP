@@ -14,6 +14,7 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-right: 15px;
 }
 .header__profile-container{
     margin-left: 30px;
@@ -22,6 +23,7 @@
     padding-left: 20px;
     height: 40px;
     align-items: center;
+    position: relative;
 }
 .header__profile-name{
     color: white;
@@ -37,7 +39,11 @@
 .header__profile-team{
     width: 70px;
     height: 70px;
-    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+.header__profile-team:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -85,4 +91,62 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.header__profile-team-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header__team-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background-color: rgb(9, 15, 26);
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0;
+  z-index: 1000;
+  min-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header__team-popup-content {
+  padding: 15px;
+}
+
+.header__team-popup-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.header__team-popup-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.header__team-popup-th {
+  text-align: left;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.header__team-popup-td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+.header__team-popup-td:last-child {
+  border-bottom: none;
 }

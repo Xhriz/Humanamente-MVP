@@ -163,6 +163,29 @@
   background-color: rgba(9, 15, 26, 0.8);
   box-shadow: 0 0 10px rgba(125, 241, 255, 0.2);
 }
+
+.login__select-team {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(125, 241, 255, 0.3);
+  border-radius: 6px;
+  background-color: rgba(9, 15, 26, 0.5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+.login__select-team option {
+  background-color: #1a2a4a;
+  color: white;
+}
+.login__select-team:focus {
+  outline: none;
+  border-color: rgba(125, 241, 255, 0.8);
+  background-color: rgba(9, 15, 26, 0.8);
+  box-shadow: 0 0 10px rgba(125, 241, 255, 0.2);
+}
 .login__add-btn {
   padding: 12px 18px;
   background-color: rgba(39, 83, 156, 0.8);

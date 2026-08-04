@@ -11,6 +11,7 @@
 @import url('./login.css');
 @import url('./game/selfassessment.css');
 @import url('./menu/instructions.css');
+@import url('./home/objetives.css');
 
 body{
   padding: 0;

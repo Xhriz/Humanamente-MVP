@@ -6,6 +6,8 @@ import gameData from "../gameData";
 import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
 import alarm from "../assets/sounds/alarm.mp3";
+import { useScrollTop } from "../hooks/useScrollTop";
+import radio from "../assets/Image/radio.png";
 
 let audioContext = null;
 
@@ -83,7 +85,8 @@ const playTimeUpSound = () => {
   }
 };
 
-export default function Game({ profileName, onGameEnd, onLogout, onMenu, selectedScenario = 0 }) {
+export default function Game({ profileName, onGameEnd, onLogout, onMenu, selectedScenario = 0, onHome }) {
+  useScrollTop();
   const [time, setTime] = useState(120);
   const [scenarioIndex, setScenarioIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -209,7 +212,7 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
 
   return (
     <div>
-    <Header profileName={profileName} onLogout={onLogout} />
+    <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
             <main>
               <section className='game'>
                 <div className="game__scenario" key={scenarioIndex}>
@@ -226,6 +229,8 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
                   <button className='game__button' onClick={onMenu}>☰ Menu</button>
                   </div>
                 </div>
+                <div className='game__screen'>
+                <div className='game__decision'>
                 <div className='game__description'>
                   <img className='game__description-img' src={fase.image} alt="Imagem do Game" />
                   <p className='game__description-text'>{displayedText}</p>
@@ -234,6 +239,15 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
                   <button className='game__option' onClick={(e) => handleOptionClick(0, e.currentTarget)}>{fase.opcoes[0].texto}</button>
                   <button className='game__option' onClick={(e) => handleOptionClick(1, e.currentTarget)}>{fase.opcoes[1].texto}</button>
                   <button className='game__option' onClick={(e) => handleOptionClick(2, e.currentTarget)}>{fase.opcoes[2].texto}</button>
+                </div>
+                </div>
+                {/* <div className='game__radio'>
+                  <div className='game__radio-header'>
+                  <img className='game__radio-img' src={radio} alt="Imagem do Game" />
+                  <h2 className='game__radio-title'>Rádio</h2>
+                  </div>
+                  <p className='game__radio-text'>{fase.opcoes[1].resposta}</p>
+                </div> */}
                 </div>
                 <div className='tip__container'>
                 <p className='tip'>ⓘ Dica: Não existe decisão perfeita. Existe decisão consciente.</p>

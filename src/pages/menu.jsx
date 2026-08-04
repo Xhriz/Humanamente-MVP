@@ -3,6 +3,7 @@ import imageMenu2 from  "../assets/Image/descoque.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 import { useState, useEffect } from "react";
+import { useScrollTop } from "../hooks/useScrollTop";
 
 const ROLE_COMPETENCIES = {
   'Facilitador': 'Condução do cenário, observação do desempenho, mediação do debriefing',
@@ -22,7 +23,8 @@ const ROLE_COMPETENCIES = {
   'Outros': 'Outro papel na equipe'
 };
 
-export default function Menu({ onLogin, profileName, scores, onLogout, onInstructions, selfAssessmentScores}) {
+export default function Menu({ onLogin, profileName, scores, onLogout, onInstructions, selfAssessmentScores, onHome}) {
+  useScrollTop();
   const [participants, setParticipants] = useState([]);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
   return (
 
     <>
-        <Header profileName={profileName} onLogout={onLogout} />
+        <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
 
         <main>
         <section className='menu'>
@@ -60,7 +62,8 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
           </div>
           <button className='menu__instructions-button' onClick={onInstructions}>Conceitos</button>
           <h3 className='menu__participants-title'>Participantes</h3>
-          <table className="menu__table">
+          <div className='menu__table-wrapper'>
+            <table className="menu__table">
                 <thead>
                   <tr>
                     <th className="menu__table-header">Participante</th>
@@ -78,19 +81,20 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
                   ))}
                 </tbody>
               </table>
+            </div>
           </div>
           <div className= 'cenarios'>
              <h2 className='cenario__title'>Cenários</h2>
-             <p className='cenario__description'>Treine suas decisões com base em cenários reais da operação</p>
+             <p className='cenario__description'>Treine suas competências com base em cenários que simulam uma operação real da unidade</p>
           <div className='cenario__structure'>
               <h3 className="cenario__structure-title">Estrutura dos Cenários</h3>
-              <p className="cenario__structure-text">1. A estrutura do conjunto de eventos suporta o desenvolvimento de cenários tanto com eventos complexos como eventos simples.<br></br>  <br></br>
+              <p className="cenario__structure-text">1. Estrutura dos Cenários: A estrutura do conjunto de eventos suporta o desenvolvimento tanto de cenários com eventos simples ou complexos.<br></br>  <br></br>
 
 2. Eventos simples: não têm maiores consequências na condução operação, uma vez diagnosticados e corrigidos.<br></br><br></br>
 
-3. Eventos Complexos: Eventos complexos têm consequências contínuas que devem ser tratadas durante operação e não podem ser resolvidos simplesmente selecionando e executando uma lista de verificação.<br></br><br></br>
+3. Eventos Complexos: Eventos complexos têm consequências contínuas que devem ser tratadas durante a operação e não podem ser resolvidos simplesmente selecionando e executando uma lista de verificação.<br></br><br></br>
 
-4. Cenários baseados em conjuntos de eventos exigem ações coordenadas de todos os membros da equipe para conclusão bem-sucedida. Ele nunca será realmente resolvido, mas, em vez disso, deverá ser gerenciado nas várias fases da operação. O evento complexo não tem, necessariamente, uma única solução. Em vez disso, pode ter várias soluções possíveis e razoáveis. Assim, o evento bem projetado promove o gerenciamento de uma situação complexa.</p>
+4. Cenário baseado em conjunto de eventos exigem ações coordenadas de todos os membros da equipe para conclusão bem-sucedida. Ele nunca poderá ser totalmente resolvido, mas, em vez disso, deverá ser gerenciado nas várias fases da operação. O evento complexo não tem, necessariamente, uma única solução. Ao contrário, ele poderá ter várias soluções possíveis e razoáveis. Assim, o evento bem projetado promove o gerenciamento de uma situação complexa.</p>
             </div>
           <div className='cenario__opitions'>
           <div className='menu__fase'>

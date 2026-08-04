@@ -165,24 +165,61 @@ background-color: rgb(46, 119, 246, 0.8);
   font-size: 22px;
   margin-top: 50px;
 }
+.menu__table-wrapper{
+  max-height: 550px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
 .menu__table{
-  border:solid 2px rgb(125, 241, 255);
-  border-radius:15px;
+  border-collapse: collapse;
   background-color: rgb(9, 15, 26);
   text-align: center;
+  width: 100%;
+}
+.menu__table thead{
+  position: sticky;
+  top: 0;
+  background-color: rgba(39, 83, 156);
+  z-index: 100;
+  border-bottom: 2px solid rgb(125, 241, 255);
 }
 .menu__table-header{
-  padding: 10px;
+  padding: 14px 10px;
   font-size: 16px;
-    color: white;
-  border-bottom: solid 1px rgb(125, 241, 255);
+  color: white;
+  border-bottom: none;
+  text-align: center;
+  border-right: 1px solid rgba(125, 241, 255, 0.3);
+  font-weight: bold;
+
+}
+.menu__table-header:last-child {
+  border-right: none;
 }
 .menu__table-cell{
     color: rgb(185, 194, 203);
-  padding: 12px;
+  padding: 12px 10px;
   font-size: 14px;
   width: 200px;
-  border-left: solid 1px rgb(125, 241, 255);
+  border-left: none;
+  border-right: 1px solid rgba(125, 241, 255, 0.2);
+  border-bottom: 1px solid rgba(125, 241, 255, 0.2);
+}
+.menu__table-cell:last-child {
+  border-right: none;
+}
+.menu__table tbody tr {
+  transition: background-color 0.3s ease;
+}
+.menu__table tbody tr:hover {
+  background-color: rgba(125, 241, 255, 0.1);
+}
+.menu__table tbody tr:nth-child(even) {
+  background-color: rgba(125, 241, 255, 0.05);
+}
+.menu__table tbody tr:last-child td {
+  border-bottom: none;
 }
 .cenario__structure{
   border:solid 2px rgb(125, 241, 255);

@@ -30,7 +30,7 @@
 }
 .game__container{
   display: flex;
-  width: 980px;
+  width: 100%; 
   justify-content: space-between;
   animation: fadeInUp 0.6s ease-out;
 }
@@ -49,12 +49,12 @@
   display: flex;
   flex-direction: column;
   margin: 0px auto 30px;
-  width: 1000px;
   border:solid 2px rgb(125, 241, 255);
   border-radius:15px;
   animation: fadeInUp 0.6s ease-out 0.15s both;
    align-items: center;
    height: 600px;
+   width: 1000px;
 }
 .game__description-img{
   width: 100%;
@@ -99,6 +99,36 @@
 
 .game__option--clicked {
   animation: buttonClick 0.6s ease-out forwards;
+}
+.game__screen{
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+}
+.game__radio{
+  background-color: rgb(9, 15, 26);
+  color: white;
+  border: solid 2px rgb(125, 241, 255);
+  border-radius: 10px;
+  height: 250px;
+  width: 350px;
+  animation: fadeInUp 0.58s ease-out;
+}
+.game__radio-header{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.game__radio-img{
+  width:30px;
+  height: 50px;
+}
+.game__radio-text{
+  font-size: 20px;
+  margin-left: 25px;
+  margin-top: 30px;
 }
 
 @keyframes buttonClick {

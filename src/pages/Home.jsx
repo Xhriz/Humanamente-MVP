@@ -5,6 +5,7 @@ import image4 from "../assets/Image/3.png";
 import image5 from "../assets/Image/4.png";
 import image6 from "../assets/Image/5.png";
 import image7 from "../assets/Image/6.png";
+import imageObj from "../assets/Image/imgobj.png";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function CardItem({ image, title, description, delay }) {
@@ -51,20 +52,33 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
               Treine suas Habilidades <span>Não Técnicas</span>
             </h1>
             <p className='description__content-text'>
-              A Fase 2 do Programa HumanaMente envolve uma simulação completa de situações que são representativas das operações do refino, gás e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
+              A Fase 2 do Programa HumanaMente envolve uma simulação completa de cenários que são representativos das operações do refino, gás e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
             </p>
             <button className='description__button' onClick={onStartGame}>
               Iniciar Treinamento →
             </button>
           </div>
         </section>
+        <section className='objectives'>
+          <img className='objectives__img' src={imageObj} alt="objetivos" />
+          <div className='objectives__header'>
+            <h2 className='objectives__title'>Objetivos do Treinamento</h2>
+
+            <p className='objectives__text'>
+             Melhorar o desempenho geral das equipes, integrando os princípios do <span>HumanaMente</span> e as habilidades técnicas já desenvolvidas em todos os trabalhadores das atividades do refino/gás/fertilizante.
+            </p>
+             <p className="objectives__subtext">O desempenho efetivo de indivíduos e equipes nas diversas atividades operacionais pressupõe o domínio tanto das habilidades técnicas quanto das habilidades não técnicas.</p>
+             <p className="objectives__subtext">Conforme Escudeiro (2012), as habilidades não técnicas são as habilidades cognitivas, sociais e de autogerenciamento, que complementam as habilidades técnicas dos trabalhadores, e contribuem para a segurança e para o desempenho eficaz de tarefas. Incluem competências tais como tomada de decisão, consciência situacional, comunicação, liderança e habilidades gerenciais, cooperação e trabalho em equipe. O desenvolvimento de metodologias de avaliação das habilidades não técnicas e fundamental para que estratégias de intervenção nos treinamentos surtam os efeitos desejados no ambiente operacional. Para se obter evidências das habilidades no cenário operacional, o avaliador se vale da observação de indicadores comportamentais, que são considerados aceitáveis ou não aceitáveis segundo a escala de avaliação das habilidades.</p>
+  
+          </div>
+         </section>
 
         <section className='cards'>
           
           <div className='cards__header'>
             <h2 className='cards__title'>Pilares do Treinamento Humanamente - Fase 2</h2>
             <p className='cards__text'>
-              Nossa metodologia foca no desenvolvimento das habilidades fundamentais para a excelência operacional e segurança industrial.
+              Nossa metodologia foca no desenvolvimento das habilidades não técnicas, que são fundamentais para a excelência e segurança operacionais.
             </p>
           </div>
 
@@ -72,8 +86,8 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
             <ul className='cards__list'>
               <CardItem
                 image={image3}
-                title="Consciênia Situacional"
-                description="Avalie perigos em tempo real e tome decisões que preservam a integridade física e operacional."
+                title="Consciência Situacional"
+                description="Perceber o ambiente, compreender o significado das informações disponíveis e projetar possíveis cenários."
                 delay={0}
               />
               <CardItem
@@ -85,13 +99,13 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
               <CardItem
                 image={image5}
                 title="Cooperação / Trabalho em Equipe"
-                description="Fortaleça a cooperação e a comunicação entre turnos para evitar falhas sistêmicas."
+                description="Fortaleça a cooperação e a comunicação entre os integrantes da equipe para evitar falhas sistêmicas."
                 delay={200}
               />
               <CardItem
                 image={image6}
                 title="Liderança / Habilidades Gerenciais"
-                description="Exerça influência positiva e coordene ações eficazes durante emergências operacionais."
+                description="Exerça influência positiva e coordene ações eficazes durante eventos inesperados e emergências operacionais."
                 delay={300}
               />
             </ul>
