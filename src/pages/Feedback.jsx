@@ -6,6 +6,8 @@ import SkillsRadarChart from "../components/SkillsRadarChart";
 import feedbackText from "../feedbackText";
 import { useState, useEffect } from "react";
 import { useScrollTop } from "../hooks/useScrollTop";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 export default function Feedback({onMenu, restart, profileName, scores, selfAssessmentScores, onLogout, onHome}) {
   useScrollTop();
@@ -65,25 +67,6 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
   const handleDownloadPDF = async () => {
     try {
-      await new Promise(resolve => {
-        if (window.html2canvas && window.jspdf) {
-          resolve();
-        } else {
-          let attempts = 0;
-          const interval = setInterval(() => {
-            attempts++;
-            if (window.html2canvas && window.jspdf) {
-              clearInterval(interval);
-              resolve();
-            }
-            if (attempts > 30) {
-              clearInterval(interval);
-              throw new Error('Bibliotecas não carregaram');
-            }
-          }, 100);
-        }
-      });
-
       const feedbackElement = document.querySelector('.feedback');
       if (!feedbackElement) {
         throw new Error('Elemento feedback não encontrado');
@@ -102,7 +85,7 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const canvas = await window.html2canvas(clone, {
+      const canvas = await html2canvas(clone, {
         scale: 4,
         useCORS: true,
         allowTaint: true,
@@ -115,20 +98,7 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
       document.body.removeChild(clone);
 
-      const ctx = canvas.getContext('2d');
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const data = imageData.data;
-
-      for (let i = 0; i < data.length; i += 4) {
-        data[i] = Math.min(255, data[i] * 1);     
-        data[i + 1] = Math.min(255, data[i + 1] * 1); 
-        data[i + 2] = Math.min(255, data[i + 2] * 1); 
-      }
-
-      ctx.putImageData(imageData, 0, 0);
-
       const imgData = canvas.toDataURL('image/png', 1.0);
-      const jsPDF = window.jspdf.jsPDF;
       const pdf = new jsPDF('p', 'mm', 'a4');
 
       const pageWidth = pdf.internal.pageSize.getWidth();
