@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     padding: 30px 20px;
     min-height: 896px;
 }
@@ -54,10 +53,10 @@
     border: solid 2px rgb(125, 241, 255);
     border-radius: 10px;
     background: rgb(9, 15, 26);
-    width:520px;
+    width: 520px;
     height: 620px;
     padding: 20px;
-    
+
 }
 .feedback__report-title{
     color: white;
@@ -91,7 +90,7 @@
     height:620px;
     width: 500px;
     padding: 20px;
-    
+
 }
 .feedback__skills-title{
     color: white;
@@ -113,7 +112,7 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
-    width:450px;
+    width: 450px;
     height: 40px;
 }
 .feedback__restart:hover{
@@ -311,6 +310,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1500px) {
+  .feedback__tables {
+   width: 90%;
+  }
+}
+@media (max-width: 1300px) {
+  .feedback__tables {
+   flex-direction: column;
   }
 }
 

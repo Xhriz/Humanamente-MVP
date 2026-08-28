@@ -72,7 +72,7 @@
 .menu__fase{
     border:solid 2px rgb(125, 241, 255);
     width: 640px;
-    height: 625px;
+    height: 635px;
     margin-top: 0px;
     border-radius: 10px;
     background-color: rgb(9, 15, 26);
@@ -119,7 +119,7 @@
     margin: 10px auto;
     display: flex;
     border-radius: 10px;
-    width:500px;
+    width: 500px;
     height: 40px;
     justify-content: center;
     align-items: center;
@@ -154,7 +154,7 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  margin-top:30px
+  margin-top:30px;
 }
 .menu__instructions-button:hover{
 background-color: rgb(46, 119, 246, 0.8);
@@ -226,7 +226,7 @@ background-color: rgb(46, 119, 246, 0.8);
     border-radius: 10px;
     background-color: rgb(9, 15, 26);
     margin-top: 20px;
-    width:780px
+    width: 780px;
 }
 .cenario__structure-title{
   color: white;
@@ -251,6 +251,25 @@ background-color: rgb(46, 119, 246, 0.8);
     transform: translateY(0);
   }
 }
+
+@media (max-width: 1350px) {
+  .cenario__description {
+   
+   font-size: 17px;
+  }
+  .cenario__structure{
+   width: 650px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .cenario__description {
+   
+  width: 600px;
+  }
+ 
+}
+
 
 @media (max-width: 768px) {
   .menu {

@@ -11,7 +11,7 @@
 }
 .selfassessment__header{
     display: flex;
-    width:1170px;
+    width: 1170px;
     justify-content: space-between;
     align-items: center;
 }
@@ -90,7 +90,7 @@ margin-bottom: 0px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
-    width:450px;
+    width: 450px;
     height: 40px;
 }
 .selfassessment__button:hover:not(:disabled){

@@ -6,10 +6,16 @@ import SkillsRadarChart from "../components/SkillsRadarChart";
 import feedbackText from "../feedbackText";
 import { useState, useEffect } from "react";
 import { useScrollTop } from "../hooks/useScrollTop";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
 
-export default function Feedback({onMenu, restart, profileName, scores, selfAssessmentScores, onLogout, onHome}) {
+const NOTECH_LABELS = {
+  comunicacao: "Comunicação",
+  cooperacao: "Cooperação",
+  lideranca: "Liderança",
+  tomada_decisao: "Tomada de Decisão",
+  consciencia_situacional: "Consciência Situacional",
+};
+
+export default function Feedback({onMenu, restart, profileName, scores, choices, selfAssessmentScores, onLogout, onHome}) {
   useScrollTop();
   const calculateAverageScore = () => {
     const scoresArray = [
@@ -58,8 +64,8 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
   const getTextIndex = () => {
     const average = calculateAverageScore();
-    if (average >= 4) return 0;
-    if (average >= 3) return 1;
+    if (average >= 4.3) return 0;
+    if (average >= 3.5) return 1;
     if (average >= 2) return 2;
     if (average >= 1) return 3;
     return 4;
@@ -67,6 +73,25 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
   const handleDownloadPDF = async () => {
     try {
+      await new Promise(resolve => {
+        if (window.html2canvas && window.jspdf) {
+          resolve();
+        } else {
+          let attempts = 0;
+          const interval = setInterval(() => {
+            attempts++;
+            if (window.html2canvas && window.jspdf) {
+              clearInterval(interval);
+              resolve();
+            }
+            if (attempts > 30) {
+              clearInterval(interval);
+              throw new Error('Bibliotecas não carregaram');
+            }
+          }, 100);
+        }
+      });
+
       const feedbackElement = document.querySelector('.feedback');
       if (!feedbackElement) {
         throw new Error('Elemento feedback não encontrado');
@@ -85,7 +110,7 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const canvas = await html2canvas(clone, {
+      const canvas = await window.html2canvas(clone, {
         scale: 4,
         useCORS: true,
         allowTaint: true,
@@ -98,7 +123,20 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
 
       document.body.removeChild(clone);
 
+      const ctx = canvas.getContext('2d');
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        data[i] = Math.min(255, data[i] * 1);     
+        data[i + 1] = Math.min(255, data[i + 1] * 1); 
+        data[i + 2] = Math.min(255, data[i + 2] * 1); 
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+
       const imgData = canvas.toDataURL('image/png', 1.0);
+      const jsPDF = window.jspdf.jsPDF;
       const pdf = new jsPDF('p', 'mm', 'a4');
 
       const pageWidth = pdf.internal.pageSize.getWidth();
@@ -158,178 +196,40 @@ export default function Feedback({onMenu, restart, profileName, scores, selfAsse
                </div>
 <div className="feedback__tables">
   <div className="feedback__table-competencies">
-  <h2 className="feedback__table-title">Competências Não Técnicas</h2>
-  <p className="feedback__table-subtitle">A avaliação do programa funciona com base nessa tabela, as categorias são implementadas nas decisões do cenário.</p>
+  <h2 className="feedback__table-title">Decisões do Cenário</h2>
+  <p className="feedback__table-subtitle">Alternativas escolhidas em cada cenário, com a justificativa e as notas não técnicas correspondentes.</p>
 <table className="feedback__table">
   <thead>
     <tr>
-      <th className="selfassessment__table-title" colSpan={4}>
-      </th>
-    </tr>
-    <tr>
-      <th className="selfassessment__table-header">Princípios/Categorias</th>
-      <th className="selfassessment__table-header">Elementos</th>
-      <th className="selfassessment__table-header">Comportamentos</th>
+      <th className="selfassessment__table-header">Cenário</th>
+      <th className="selfassessment__table-header">Alternativa Escolhida</th>
+      <th className="selfassessment__table-header">Justificativa</th>
+      <th className="selfassessment__table-header">Notas Não Técnicas</th>
     </tr>
   </thead>
 
   <tbody>
-    {/* COMUNICAÇÃO (1 linha) */}
-    <tr>
-      <td className="selfassessment__table-cell">COMUNICAÇÃO</td>
-      <td className="selfassessment__table-cell">MENSAGEM</td>
-      <td className="selfassessment__table-cell">
-        Estabelecer um canal de comunicação aberto e participativo.
-        <br />
-        Encorajar que membros da equipe compartilhem as informações.
-      </td> 
-    </tr>
-
-    {/* COOPERAÇÃO/TRABALHO EM EQUIPE (3 linhas) */}
-    <tr>
-      <td className="selfassessment__table-cell" rowSpan={3}>
-        COOPERAÇÃO/TRABALHO EM EQUIPE
-      </td>
-      <td className="selfassessment__table-cell">INTERAÇÃO</td>
-      <td className="selfassessment__table-cell">
-        Levar em consideração sugestões dos outros mesmo que você não concorde.
-        <br />
-        Levar em consideração a condição dos outros.
-        <br />
-        Oferecer um feedback apropriado.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">APOIO À EQUIPE</td>
-      <td className="selfassessment__table-cell">
-        Colaborar com a equipe em situações de necessidade, mantendo o foco na tarefa.
-        <br />
-        Fornecer à equipe todo suporte logístico e operacional para a realização da tarefa.
-        <br />
-        Oferecer ajuda.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">RESOLUÇÃO DE CONFLITOS</td>
-      <td className="selfassessment__table-cell">
-        Manter a calma nos conflitos.
-        <br />
-        Sugerir soluções ao conflito.
-        <br />
-        Concentrar-se no que é certo e não em quem está certo.
-      </td>
-    </tr>
-
-    {/* LIDERANÇA E HABILIDADES GERENCIAIS (4 linhas) */}
-    <tr>
-      <td className="selfassessment__table-cell" rowSpan={4}>
-        LIDERANÇA E HABILIDADES GERENCIAIS
-      </td>
-      <td className="selfassessment__table-cell">USO DE AUTORIDADE E ASSERTIVIDADE</td>
-      <td className="selfassessment__table-cell">
-        Posicionamento no papel de líder.
-        <br />
-        Influenciar a equipe para que a tarefa tenha sucesso.
-        <br />
-        Exercer o comando quando a situação exigir.
-        <br />
-        Ter iniciativa para garantir que a tarefa seja atingida com sucesso.
-        <br />
-        Motivar o grupo pelo reconhecimento e pela supervisão.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">OFERECER E MANTER PADRÕES</td>
-      <td className="selfassessment__table-cell">
-        Elaborar procedimentos operacionais padronizados.
-        <br />
-        Garantir que os procedimentos padrões sejam seguidos.
-        <br />
-        Interferir em caso de desvio.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">PLANEJAMENTO E COORDENAÇÃO</td>
-      <td className="selfassessment__table-cell">
-        Envolver os elementos do grupo de trabalho no planejamento e na consecução da tarefa.
-        <br />
-        Definir claramente as intenções e os objetivos.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">GERENCIAMENTO DA CARGA DE TRABALHO</td>
-      <td className="selfassessment__table-cell">
-        Distribuir as atividades entre a equipe.
-        <br />
-        Monitorar o trabalho e corrigir apropriadamente.
-        <br />
-        Priorizar atividades operacionais secundárias para a obtenção de recursos suficientes para as atividades principais.
-        <br />
-        Reservar tempo suficiente para a realização da atividade.
-      </td>
-    </tr>
-
-    {/* CONSCIÊNCIA SITUACIONAL (3 linhas) */}
-    <tr>
-      <td className="selfassessment__table-cell" rowSpan={3}>
-        CONSCIÊNCIA SITUACIONAL
-      </td>
-      <td className="selfassessment__table-cell">MONITORAMENTO</td>
-      <td className="selfassessment__table-cell">
-        Monitorar os sistemas que influenciam a operação.
-        <br />
-        Ter conhecimento das entradas e das mudanças para os sistemas.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">CONSCIÊNCIA DO AMBIENTE EXTERNO</td>
-      <td className="selfassessment__table-cell">
-        Obter informações sobre como o ambiente externo pode interferir no trabalho.
-        <br />
-        Dividir informações sobre o ambiente com os demais.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">PERCEPÇÃO/COMPREENSÃO/PROJEÇÃO</td>
-      <td className="selfassessment__table-cell">
-        Perceber e compreender os problemas possíveis ou futuros.
-        <br />
-        Projetar as consequências.
-      </td>
-    </tr>
-
-    {/* TOMADA DE DECISÃO (3 linhas) */}
-    <tr>
-      <td className="selfassessment__table-cell" rowSpan={3}>
-        TOMADA DE DECISÃO
-      </td>
-      <td className="selfassessment__table-cell">DEFINIÇÃO E DIAGNÓSTICO DO PROBLEMA</td>
-      <td className="selfassessment__table-cell">
-        Buscar informações e identificar o problema.
-        <br />
-        Rever com a equipe os fatores causais do problema.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">PRODUÇÃO DE OPÇÕES</td>
-      <td className="selfassessment__table-cell">
-        Indicar o curso de ação.
-        <br />
-        Estabelecer curso alternativo de ação.
-        <br />
-        Perguntar à equipe por opções.
-        <br />
-        Confirmar curso de ação escolhido.
-      </td>
-    </tr>
-    <tr>
-      <td className="selfassessment__table-cell">AVALIAÇÃO DO RISCO</td>
-      <td className="selfassessment__table-cell">
-        Avaliação dos riscos acerca dos cursos de ação.
-        <br />
-        Avaliação dos riscos acerca dos cursos de ação alternativos.
-      </td>
-    </tr>
+    {choices && choices.length > 0 ? (
+      choices.map((choice, index) => (
+        <tr key={index}>
+          <td className="selfassessment__table-cell">{choice.titulo || `Cenário ${index + 1}`}</td>
+          <td className="selfassessment__table-cell">{choice.texto}</td>
+          <td className="selfassessment__table-cell">{choice.justificativa || "—"}</td>
+          <td className="selfassessment__table-cell">
+            {Object.entries(NOTECH_LABELS).map(([key, label], i, arr) => (
+              <span key={key}>
+                {label}: {choice.notech?.[key] ?? "—"}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))}
+          </td>
+        </tr>
+      ))
+    ) : (
+      <tr>
+        <td className="selfassessment__table-cell" colSpan={4}>Nenhuma decisão registrada neste cenário.</td>
+      </tr>
+    )}
   </tbody>
 </table>
 </div>

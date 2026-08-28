@@ -1,13 +1,9 @@
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
 import CronoImg from "../assets/Image/cronometro.png";
 import { useState, useEffect, useRef } from "react";
 import gameData from "../gameData";
-import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
 import alarm from "../assets/sounds/alarm.mp3";
 import { useScrollTop } from "../hooks/useScrollTop";
-import radio from "../assets/Image/radio.png";
 
 let audioContext = null;
 
@@ -98,8 +94,9 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
     consciencia_situacional: 0,
   });
   const nextCalledRef = useRef(false);
+  const choicesRef = useRef([]);
 
-  const cenarioKey = selectedScenario === 0 ? 'cenario1' : 'cenario2';
+  const cenarioKey = ['cenario1', 'cenario2', 'cenario3', 'cenario4'][selectedScenario];
   const scenarioData = gameData[0][cenarioKey];
   const fase = scenarioData[scenarioIndex];
 
@@ -119,6 +116,15 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
     // Aguarda um pouco e então processa a opção
     setTimeout(() => {
       const selectedOption = fase.opcoes[optionIndex];
+      choicesRef.current = [
+        ...choicesRef.current,
+        {
+          titulo: fase.title,
+          texto: selectedOption.texto,
+          justificativa: selectedOption.justificativa || '',
+          notech: selectedOption.notech || {},
+        },
+      ];
       if (selectedOption.notech) {
         setScores(prev => ({
           comunicacao: prev.comunicacao + (selectedOption.notech.comunicacao || 0),
@@ -141,7 +147,7 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
         tomada_decisao: parseFloat((scores.tomada_decisao / scenarioData.length).toFixed(1)),
         consciencia_situacional: parseFloat((scores.consciencia_situacional / scenarioData.length).toFixed(1)),
       };
-      onGameEnd(finalScores);
+      onGameEnd(finalScores, choicesRef.current);
       return;
     }
     setScenarioIndex(prev => {
@@ -160,7 +166,7 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
 
   useEffect(() => {
     nextCalledRef.current = false;
-    setTime(120);
+    setTime(300);
     setDisplayedText("");
   }, [scenarioIndex]);
 
@@ -196,7 +202,7 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
                 tomada_decisao: parseFloat((scores.tomada_decisao / scenarioData.length).toFixed(1)),
                 consciencia_situacional: parseFloat((scores.consciencia_situacional / scenarioData.length).toFixed(1)),
               };
-              onGameEnd(finalScores);
+              onGameEnd(finalScores, choicesRef.current);
             } else {
               handleNextScenario();
             }
@@ -241,13 +247,6 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
                   <button className='game__option' onClick={(e) => handleOptionClick(2, e.currentTarget)}>{fase.opcoes[2].texto}</button>
                 </div>
                 </div>
-                {/* <div className='game__radio'>
-                  <div className='game__radio-header'>
-                  <img className='game__radio-img' src={radio} alt="Imagem do Game" />
-                  <h2 className='game__radio-title'>Rádio</h2>
-                  </div>
-                  <p className='game__radio-text'>{fase.opcoes[1].resposta}</p>
-                </div> */}
                 </div>
                 <div className='tip__container'>
                 <p className='tip'>ⓘ Dica: Não existe decisão perfeita. Existe decisão consciente.</p>

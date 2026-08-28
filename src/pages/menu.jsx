@@ -1,5 +1,7 @@
 import imageMenu from "../assets/Image/h2s.png";
 import imageMenu2 from  "../assets/Image/descoque.png";
+import imageMenu3 from  "../assets/Image/degradacao.png";
+import imageMenu4 from  "../assets/Image/parada.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 import { useState, useEffect } from "react";
@@ -109,7 +111,6 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
                 <button className='menu__fase-button' onClick={() => onLogin(0)}>Iniciar Treinamento</button>
             </div>
 
-
           </div>
            <div className='menu__fase'>
             <div className='menu__fase-card'>
@@ -122,6 +123,31 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
                 <button className='menu__fase-button' onClick={() => onLogin(1)}>Iniciar Treinamento</button>
             </div>
           </div>
+
+          <div className='menu__fase'>
+            <div className='menu__fase-card'>
+            <img className='menu__fase-img' src={imageMenu3} alt="Iniciante" />
+            </div>
+            <div className='menu__fase-info'>
+                <p className='menu__fase-nivel'>Complexo</p>
+                <h2 className='menu__fase-title'>Degradação Térmica de uma Linha de Troca de Calor</h2>
+                <p className='menu__fase-description'>Durante a operação de uma planta de processamento de gás natural, uma das linhas de troca térmica passa a operar sob condições anormais de temperatura. Inicialmente, os desvios observados parecem pequenos e permanecem dentro dos limites.</p>
+                <button className='menu__fase-button' onClick={() => onLogin(2)}>Iniciar Treinamento</button>
+            </div>
+          </div>
+
+          <div className='menu__fase'>
+            <div className='menu__fase-card'>
+            <img className='menu__fase-img' src={imageMenu4} alt="Iniciante" />
+            </div>
+            <div className='menu__fase-info'>
+                <p className='menu__fase-nivel'>Complexo</p>
+                <h2 className='menu__fase-title'>Planejamento e Execução de uma Parada de Manutenção</h2>
+                <p className='menu__fase-description'>Durante a preparação da Parada de Manutenção, é identificada tardiamente a necessidade de serviços em um equipamento crítico fora do escopo congelado. A equipe aguarda sua orientação. Reavalie riscos e mantenha o controle sob pressão.</p>
+                <button className='menu__fase-button' onClick={() => onLogin(3)}>Iniciar Treinamento</button>
+            </div>
+          </div>
+
           </div>
           </div>
 

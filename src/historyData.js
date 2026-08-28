@@ -1,6 +1,8 @@
 import imageGame2 from "./assets/Image/cenario1history.png";
 import videoHistory from "./assets/Video/videoinity.mp4";
 import imageGame3 from "./assets/Image/cenario2history.png";
+import imageGame4 from "./assets/Image/cenario3history.png";
+import imageGame5 from "./assets/Image/cenario4history.png";
 
 const historyData = [{
   subtitle: "Cenário Complexo",
@@ -17,7 +19,7 @@ Você faz parte da equipe responsável por coordenar a resposta: painel, campo, 
 
 Em cada evento, você terá três opções de atuação. Não há “resposta correta”, mas cada escolha leva a um caminho diferente, com consequências próprias. Em todos os casos, o objetivo é o mesmo: proteger vidas, o meio ambiente e o patrimônio, aprendendo com as decisões tomadas.
 
-Leia o contexto, escolha sua ação em até 2 minutos e acompanhe a evolução do cenário.`,
+Leia o contexto, escolha sua ação em até 5 minutos e acompanhe a evolução do cenário.`,
   image: imageGame2,
   video: videoHistory
 },
@@ -30,8 +32,52 @@ Os Engenheiros e supervisores de operação analisam os fluxogramas de engenhari
 
 Vamos preparar a Unidade para a Parada Programada de Manutenção de modo que haja segurança das pessoas e da unidade.
 
-Vocês terão 2 minutos para cada decisão.`,
+Vocês terão 5 minutos para cada decisão.`,
   image: imageGame3,
+  video: videoHistory
+},
+{
+  subtitle: "Cenário Complexo",
+  title: "Degradação Térmica de uma Linha de Troca de Calor",
+  text: `Durante a operação de uma planta de processamento de gás natural, uma das linhas de troca térmica passa a operar sob condições anormais de temperatura. Inicialmente, os desvios observados parecem pequenos e permanecem dentro dos limites operacionais formais, o que reduz a percepção de urgência por parte das equipes. 
+
+Embora alarmes estejam ocorrendo há vários turnos, a equipe ainda não percebe completamente a interação entre: 
+
+. Redução de temperatura; 
+
+. Formação de condensado; 
+
+. Fragilização de equipamentos; 
+
+. Alteração das propriedades dos fluidos; 
+
+. Mudança do comportamento dinâmico do processo. 
+
+O cenário evolui progressivamente até culminar em um acidente de processo. 
+
+Vocês terão 5 minutos para cada decisão.`,
+  image: imageGame4,
+  video: videoHistory
+},
+{
+  subtitle: "Cenário Complexo",
+  title: "Planejamento e Execução de uma Parada de Manutenção",
+  text: `Durante a preparação da Parada de Manutenção, um equipamento crítico é redescoberto fora do escopo congelado. Gradualmente, sinais de desalinhamento começam a aparecer entre as áreas e no cronograma. Embora existam alertas e ressalvas em reuniões e e-mails há semanas, a equipe ainda não percebe completamente a interação entre:
+
+. Descoberta tardia de novos serviços;
+
+. Aquisição emergencial (ou atraso) de materiais críticos;
+
+. Revisões contratuais e mobilização extraordinária de recursos;
+
+. Conflitos de prioridade e sequenciamento das atividades;
+
+. Impacto acumulado no caminho crítico e nas liberações operacionais.
+
+O cenário evolui progressivamente até culminar em atrasos relevantes, retrabalho e elevação do risco operacional na execução da parada. 
+
+Vocês terão 5 minutos para cada decisão.`,
+  image: imageGame5,
   video: videoHistory
 },
 ]

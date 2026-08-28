@@ -14,13 +14,18 @@ align-items: center;
 }
 .description__content{
   width: 80%;
-  margin-top: -640px;
-  
-}
+  margin-top: -670px;
 
+}
+.description__fase{
+  color: white;
+  font-size: 20px;
+  margin:0;
+  margin-bottom: 20px;
+}
 .description__title{
   color: white;
-  font-size: 70px;
+  font-size: 60px;
   margin:0;
   width: 550px;
 }
@@ -46,6 +51,7 @@ align-items: center;
 .description__button:hover{
   background-color: rgb(46, 119, 246, 0.8);
 }
+
 
 @media (max-width: 768px) {
   .description__img {

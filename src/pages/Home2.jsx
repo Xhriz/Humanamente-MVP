@@ -1,4 +1,3 @@
-
 import image2 from "../assets/Image/ref.png";
 import image3 from "../assets/Image/1.png";
 import image4 from "../assets/Image/3.png";
@@ -33,16 +32,16 @@ export default function Home2({ onLogout, profileName , onHome, onMenu}) {
   return (
     <>
        <Header profileName={profileName} onLogout={onLogout} onHome={onHome} />
-
        <main>
         <section className='description'>
           <img className='description__img' src={image2} alt="imagem da refinaria" />
           <div className='description__content'>
-            <h1 className='description__title'>
+            <h1 className='description__fase'>HumanaMente - Fase 2</h1>
+            <h2 className='description__title'>
               Treine suas Habilidades <span>Não Técnicas</span>
-            </h1>
+            </h2>
             <p className='description__content-text'>
-              A Fase 2 do Programa HumanaMente envolve uma simulação completa de cenários que são representativos das operações do refino, gás e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
+              A Fase 2 do Programa HumanaMente envolve uma simulação completa de cenários que são representativos das operações do refino, gás, lubrificantes e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
             </p>
             <button className='description__button' onClick={onMenu}>
               Voltar ao Menu
@@ -55,7 +54,7 @@ export default function Home2({ onLogout, profileName , onHome, onMenu}) {
             <h2 className='objectives__title'>Objetivos do Treinamento</h2>
 
             <p className='objectives__text'>
-             Melhorar o desempenho geral das equipes, integrando os princípios do <span>HumanaMente</span> e as habilidades técnicas já desenvolvidas em todos os trabalhadores das atividades do refino/gás/fertilizante.
+             Melhorar o desempenho geral das equipes, integrando os princípios do <span>HumanaMente</span> e as habilidades técnicas já desenvolvidas em todas as equipes de trabalho das atividades do refino/gás/lubrificante/fertilizante.
             </p>
              <p className="objectives__subtext">O desempenho efetivo de indivíduos e equipes nas diversas atividades operacionais pressupõe o domínio tanto das habilidades técnicas quanto das habilidades não técnicas.</p>
              <p className="objectives__subtext">Conforme Escudeiro (2012), as habilidades não técnicas são as habilidades cognitivas, sociais e de autogerenciamento, que complementam as habilidades técnicas dos trabalhadores, e contribuem para a segurança e para o desempenho eficaz de tarefas. Incluem competências tais como tomada de decisão, consciência situacional, comunicação, liderança e habilidades gerenciais, cooperação e trabalho em equipe. O desenvolvimento de metodologias de avaliação das habilidades não técnicas e fundamental para que estratégias de intervenção nos treinamentos surtam os efeitos desejados no ambiente operacional. Para se obter evidências das habilidades no cenário operacional, o avaliador se vale da observação de indicadores comportamentais, que são considerados aceitáveis ou não aceitáveis segundo a escala de avaliação das habilidades.</p>

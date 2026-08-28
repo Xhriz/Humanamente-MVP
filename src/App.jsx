@@ -25,6 +25,10 @@ function App() {
     const saved = localStorage.getItem('user__scores');
     return saved ? JSON.parse(saved) : null;
   });
+  const [gameChoices, setGameChoices] = useState(() => {
+    const saved = localStorage.getItem('user__choices');
+    return saved ? JSON.parse(saved) : null;
+  });
   const [selectedScenario, setSelectedScenario] = useState(0);
   const [selfAssessmentScores, setSelfAssessmentScores] = useState(() => {
     const saved = localStorage.getItem('selfassessment__scores');
@@ -47,8 +51,9 @@ function App() {
     setScreen("instructions");
   };
 
-  const handleGameEnd = (scores) => {
+  const handleGameEnd = (scores, choices) => {
     setGameScores(scores);
+    setGameChoices(choices || []);
     // NÃO salva no localStorage ainda - espera a autoavaliação
     setScreen("end");
   };
@@ -56,11 +61,13 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('header__profile-name');
     localStorage.removeItem('user__scores');
+    localStorage.removeItem('user__choices');
     localStorage.removeItem('selfassessment__scores');
     localStorage.removeItem('login__timestamp');
     localStorage.removeItem('login__participants');
     setProfileName('');
     setGameScores(null);
+    setGameChoices(null);
     setSelfAssessmentScores(null);
     setScreen("home");
   };
@@ -87,9 +94,9 @@ return (
       {screen === "menu" && <Menu profileName={profileName} scores={gameScores} onLogin={(scenarioIndex) => {setSelectedScenario(scenarioIndex); setScreen("history");}} selfAssessmentScores={selfAssessmentScores} onLogout={handleLogout} onInstructions={() => setScreen("instructions")} onHome={() => setScreen("home2")}/>}
       {screen === "history" && <History profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("game")} back={() => setScreen("menu")} onLogout={handleLogout} onHome={() => setScreen("home2")}/>}
       {screen === "game" && <Game profileName={profileName} selectedScenario={selectedScenario} onGameEnd={handleGameEnd} onLogout={handleLogout} onMenu={() => setScreen("menu")} onHome={() => setScreen("home2")}/>}
-      {screen === "end" && <End profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("selfassessment")} onLogout={handleLogout} onMenu={() => {setGameScores(null); setScreen("menu");}} onHome={() => setScreen("home2")}/>}
-      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} selfAssessmentScores={selfAssessmentScores} onLogout={handleLogout} onHome={() => setScreen("home2")}/>}
-      {screen === "selfassessment" && <SelfAssessment profileName={profileName} onLogout={handleLogout} onMenu={() => {setGameScores(null); setScreen("menu");}} onFeedback={()=>{localStorage.setItem('user__scores', JSON.stringify(gameScores)); const saved = localStorage.getItem('selfassessment__scores'); setSelfAssessmentScores(saved ? JSON.parse(saved) : null); setScreen("feedback");}} onHome={() => setScreen("home2")}/>}
+      {screen === "end" && <End profileName={profileName} scores={gameScores} selectedScenario={selectedScenario} onLogin={() => setScreen("selfassessment")} onLogout={handleLogout} onMenu={() => {setGameScores(null); setGameChoices(null); setScreen("menu");}} onHome={() => setScreen("home2")}/>}
+      {screen === "feedback" && <Feedback onMenu={() => setScreen("menu")} restart={() => setScreen("game")} profileName={profileName} scores={gameScores} choices={gameChoices} selfAssessmentScores={selfAssessmentScores} onLogout={handleLogout} onHome={() => setScreen("home2")}/>}
+      {screen === "selfassessment" && <SelfAssessment profileName={profileName} onLogout={handleLogout} onMenu={() => {setGameScores(null); setGameChoices(null); setScreen("menu");}} onFeedback={()=>{localStorage.setItem('user__scores', JSON.stringify(gameScores)); localStorage.setItem('user__choices', JSON.stringify(gameChoices)); const saved = localStorage.getItem('selfassessment__scores'); setSelfAssessmentScores(saved ? JSON.parse(saved) : null); setScreen("feedback");}} onHome={() => setScreen("home2")}/>}
     </div>
   );
 }

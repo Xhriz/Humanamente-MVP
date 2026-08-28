@@ -274,12 +274,12 @@
     font-size: 16px;
   }
 
-  .cards__subtitle-sub {
-    font-size: 20px;
-  }
-
   .cards__description-sub {
     font-size: 16px;
+  }
+
+  .cards__subtitle-sub {
+    font-size: 20px;
   }
 }
 
@@ -289,8 +289,8 @@
   }
 
   .cards__title {
-    font-size: 22px;
     margin: 0 10px;
+    font-size: 22px;
   }
 
   .cards__text {
@@ -325,7 +325,6 @@
   }
 
   .cards__subtitle-sub {
-    font-size: 16px;
     margin: 20px 0 15px 0;
   }
 
