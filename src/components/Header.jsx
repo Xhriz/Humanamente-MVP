@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
-import imageTeam from "../assets/Image/equip.png";
+import image1 from "../assets/Image/2.webp";
+import imageProfile from "../assets/Image/historico.webp";
+import imageTeam from "../assets/Image/equip.webp";
 
 export default function Header({ profileName, onLogout, onHome }) {
   const [showTeamPopup, setShowTeamPopup] = useState(false);

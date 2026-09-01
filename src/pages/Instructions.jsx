@@ -1,6 +1,6 @@
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
-import imageTeam from "../assets/Image/equip.png";
+import image1 from "../assets/Image/2.webp";
+import imageProfile from "../assets/Image/historico.webp";
+import imageTeam from "../assets/Image/equip.webp";
 import Header from "../components/Header";
 import { useScrollTop } from "../hooks/useScrollTop";
 

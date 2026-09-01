@@ -1,8 +1,8 @@
-import imageGame2 from "./assets/Image/cenario1history.png";
+import imageGame2 from "./assets/Image/cenario1history.webp";
 import videoHistory from "./assets/Video/videoinity.mp4";
-import imageGame3 from "./assets/Image/cenario2history.png";
-import imageGame4 from "./assets/Image/cenario3history.png";
-import imageGame5 from "./assets/Image/cenario4history.png";
+import imageGame3 from "./assets/Image/cenario2history.webp";
+import imageGame4 from "./assets/Image/cenario3history.webp";
+import imageGame5 from "./assets/Image/cenario4history.webp";
 
 const historyData = [{
   subtitle: "Cenário Complexo",

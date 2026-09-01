@@ -1,8 +1,8 @@
-import imageEnd from "./assets/Image/cenarioend.png";
-import imageEnd2 from "./assets/Image/cenarioend2.png";
+import imageEnd from "./assets/Image/cenarioend.webp";
+import imageEnd2 from "./assets/Image/cenarioend2.webp";
 import videoHistory from "./assets/Video/videoend.mp4";
-import imageEnd3 from "./assets/Image/cenarioend3.png";
-import imageEnd4 from "./assets/Image/cenarioend4.png";
+import imageEnd3 from "./assets/Image/cenarioend3.webp";
+import imageEnd4 from "./assets/Image/cenarioend4.webp";
 
 const endData = [{
   subtitle: "Cenário Complexo",

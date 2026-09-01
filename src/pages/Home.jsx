@@ -1,10 +1,10 @@
-import image1 from "../assets/Image/2.png";
-import image2 from "../assets/Image/ref.png";
-import image3 from "../assets/Image/1.png";
-import image4 from "../assets/Image/3.png";
-import image5 from "../assets/Image/4.png";
-import image6 from "../assets/Image/5.png";
-import imageObj from "../assets/Image/imgobj.png";
+import image1 from "../assets/Image/2.webp";
+import image2 from "../assets/Image/ref.webp";
+import image3 from "../assets/Image/1.webp";
+import image4 from "../assets/Image/3.webp";
+import image5 from "../assets/Image/4.webp";
+import image6 from "../assets/Image/5.webp";
+import imageObj from "../assets/Image/imgobj.webp";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function CardItem({ image, title, description, delay }) {

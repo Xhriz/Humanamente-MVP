@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import image1 from "../assets/Image/2.png";
-import interrogacao from "../assets/Image/interrogacao.png";
+import image1 from "../assets/Image/2.webp";
+import interrogacao from "../assets/Image/interrogacao.webp";
 
 const TEAM_NAMES = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
 

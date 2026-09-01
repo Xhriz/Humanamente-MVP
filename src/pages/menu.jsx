@@ -1,7 +1,7 @@
-import imageMenu from "../assets/Image/h2s.png";
-import imageMenu2 from  "../assets/Image/descoque.png";
-import imageMenu3 from  "../assets/Image/degradacao.png";
-import imageMenu4 from  "../assets/Image/parada.png";
+import imageMenu from "../assets/Image/h2s.webp";
+import imageMenu2 from  "../assets/Image/descoque.webp";
+import imageMenu3 from  "../assets/Image/degradacao.webp";
+import imageMenu4 from  "../assets/Image/parada.webp";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 import { useState, useEffect } from "react";
@@ -90,13 +90,13 @@ export default function Menu({ onLogin, profileName, scores, onLogout, onInstruc
              <p className='cenario__description'>Treine suas competências com base em cenários que simulam uma operação real da unidade</p>
           <div className='cenario__structure'>
               <h3 className="cenario__structure-title">Estrutura dos Cenários</h3>
-              <p className="cenario__structure-text">1. Estrutura dos Cenários: A estrutura do conjunto de eventos suporta o desenvolvimento tanto de cenários com eventos simples ou complexos.<br></br>  <br></br>
+              <p className="cenario__structure-text">1. Estrutura dos Cenários: a estrutura do conjunto de eventos suporta o desenvolvimento tanto de cenários com eventos simples ou complexos.<br></br>  <br></br>
 
 2. Eventos simples: não têm maiores consequências na condução operação, uma vez diagnosticados e corrigidos.<br></br><br></br>
 
-3. Eventos Complexos: Eventos complexos têm consequências contínuas que devem ser tratadas durante a operação e não podem ser resolvidos simplesmente selecionando e executando uma lista de verificação.<br></br><br></br>
+3. Eventos Complexos: eventos complexos têm consequências contínuas que devem ser tratadas durante a operação e não podem ser resolvidos simplesmente selecionando e executando uma lista de verificação.<br></br><br></br>
 
-4. Cenário baseado em conjunto de eventos exigem ações coordenadas de todos os membros da equipe para conclusão bem-sucedida. Ele nunca poderá ser totalmente resolvido, mas, em vez disso, deverá ser gerenciado nas várias fases da operação. O evento complexo não tem, necessariamente, uma única solução. Ao contrário, ele poderá ter várias soluções possíveis e razoáveis. Assim, o evento bem projetado promove o gerenciamento de uma situação complexa.</p>
+4. Cenários baseados em conjunto de eventos exigem ações coordenadas de todos os membros da equipe para conclusão bem-sucedida. Ele nunca poderá ser totalmente resolvido, mas, em vez disso, deverá ser gerenciado nas várias fases da operação. O evento complexo não tem, necessariamente, uma única solução. Ao contrário, ele poderá ter várias soluções possíveis e razoáveis. Assim, o evento bem projetado promove o gerenciamento de uma situação complexa.</p>
             </div>
           <div className='cenario__opitions'>
           <div className='menu__fase'>

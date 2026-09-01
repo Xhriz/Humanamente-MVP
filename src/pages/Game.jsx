@@ -1,4 +1,4 @@
-import CronoImg from "../assets/Image/cronometro.png";
+import CronoImg from "../assets/Image/cronometro.webp";
 import { useState, useEffect, useRef } from "react";
 import gameData from "../gameData";
 import Header from "../components/Header";
@@ -120,6 +120,7 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
         ...choicesRef.current,
         {
           titulo: fase.title,
+          descricao: fase.descricao,
           texto: selectedOption.texto,
           justificativa: selectedOption.justificativa || '',
           notech: selectedOption.notech || {},

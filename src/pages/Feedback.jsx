@@ -1,11 +1,10 @@
-import image1 from "../assets/Image/2.png";
-import imageProfile from "../assets/Image/historico.png";
-import imageTeam from "../assets/Image/equip.png";
 import Header from "../components/Header";
 import SkillsRadarChart from "../components/SkillsRadarChart";
 import feedbackText from "../feedbackText";
 import { useState, useEffect } from "react";
 import { useScrollTop } from "../hooks/useScrollTop";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 const NOTECH_LABELS = {
   comunicacao: "Comunicação",
@@ -73,25 +72,6 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
 
   const handleDownloadPDF = async () => {
     try {
-      await new Promise(resolve => {
-        if (window.html2canvas && window.jspdf) {
-          resolve();
-        } else {
-          let attempts = 0;
-          const interval = setInterval(() => {
-            attempts++;
-            if (window.html2canvas && window.jspdf) {
-              clearInterval(interval);
-              resolve();
-            }
-            if (attempts > 30) {
-              clearInterval(interval);
-              throw new Error('Bibliotecas não carregaram');
-            }
-          }, 100);
-        }
-      });
-
       const feedbackElement = document.querySelector('.feedback');
       if (!feedbackElement) {
         throw new Error('Elemento feedback não encontrado');
@@ -110,7 +90,7 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
 
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const canvas = await window.html2canvas(clone, {
+      const canvas = await html2canvas(clone, {
         scale: 4,
         useCORS: true,
         allowTaint: true,
@@ -136,7 +116,6 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
       ctx.putImageData(imageData, 0, 0);
 
       const imgData = canvas.toDataURL('image/png', 1.0);
-      const jsPDF = window.jspdf.jsPDF;
       const pdf = new jsPDF('p', 'mm', 'a4');
 
       const pageWidth = pdf.internal.pageSize.getWidth();
@@ -196,15 +175,16 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
                </div>
 <div className="feedback__tables">
   <div className="feedback__table-competencies">
-  <h2 className="feedback__table-title">Decisões do Cenário</h2>
+  <h2 className="feedback__table-title">{choices?.[0]?.titulo || "Decisões do Cenário"}</h2>
   <p className="feedback__table-subtitle">Alternativas escolhidas em cada cenário, com a justificativa e as notas não técnicas correspondentes.</p>
+<div className="feedback__table-scroll">
 <table className="feedback__table">
   <thead>
     <tr>
-      <th className="selfassessment__table-header">Cenário</th>
-      <th className="selfassessment__table-header">Alternativa Escolhida</th>
+      <th className="selfassessment__table-header">Evento</th>
+      <th className="selfassessment__table-header">Opção Selecionada</th>
       <th className="selfassessment__table-header">Justificativa</th>
-      <th className="selfassessment__table-header">Notas Não Técnicas</th>
+      <th className="selfassessment__table-header">Avaliação</th>
     </tr>
   </thead>
 
@@ -212,7 +192,7 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
     {choices && choices.length > 0 ? (
       choices.map((choice, index) => (
         <tr key={index}>
-          <td className="selfassessment__table-cell">{choice.titulo || `Cenário ${index + 1}`}</td>
+          <td className="selfassessment__table-cell">{choice.descricao || `Cenário ${index + 1}`}</td>
           <td className="selfassessment__table-cell">{choice.texto}</td>
           <td className="selfassessment__table-cell">{choice.justificativa || "—"}</td>
           <td className="selfassessment__table-cell">
@@ -232,6 +212,7 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
     )}
   </tbody>
 </table>
+</div>
 </div>
 
               <div className="feedback__table-equip">

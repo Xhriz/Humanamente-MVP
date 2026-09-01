@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../components/Header';
-import icon from '../assets/Image/info.png';
+import icon from '../assets/Image/info.webp';
 import { useScrollTop } from '../hooks/useScrollTop';
 import { useEffect } from 'react';
 
