@@ -15,7 +15,23 @@ align-items: center;
 .description__content{
   width: 80%;
   margin-top: -670px;
+  display: flex;
+  justify-content: space-between;
+}
 
+.description__image-container{
+ display: flex;
+ flex-direction: column;
+ gap: 50px;
+ align-items: center;
+}
+.image__opera{
+  width: 250px;
+  object-fit: cover;
+}
+.image__mandala{
+  width: 400px;
+  border-radius: 20px;
 }
 .description__fase{
   color: white;
@@ -52,7 +68,6 @@ align-items: center;
   background-color: rgb(46, 119, 246, 0.8);
 }
 
-
 @media (max-width: 768px) {
   .description__img {
     height: 500px;
@@ -87,6 +102,7 @@ align-items: center;
     font-size: 14px;
   }
 }
+
 
 @media (max-width: 480px) {
   .description__img {

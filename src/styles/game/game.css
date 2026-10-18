@@ -6,6 +6,11 @@
   align-items: flex-start;
 }
 
+.timer__placeholder {
+  width: 120px;
+  height: 50px;
+  flex: 0 0 auto;
+}
 .timer__circle {
   width: 120px;
   height: 50px;
@@ -17,6 +22,12 @@
   justify-content: center;
   gap: 5px;
   animation: fadeInUp 0.6s ease-out;
+}
+.timer__circle--floating {
+  position: fixed;
+  top: 90px;
+  right: max(16px, calc((100vw - 1300px) / 2));
+  z-index: 20;
 }
 .timer__text {
   font-size: 30px;
@@ -242,6 +253,11 @@
   .timer__circle {
     width: 100px;
     height: 45px;
+  }
+
+  .timer__placeholder {
+    width: 100px;
+    height: 45px;
     margin-bottom: 20px;
   }
 
@@ -305,6 +321,11 @@
   }
 
   .timer__circle {
+    width: 80px;
+    height: 40px;
+  }
+
+  .timer__placeholder {
     width: 80px;
     height: 40px;
   }

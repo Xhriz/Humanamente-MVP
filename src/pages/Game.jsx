@@ -95,10 +95,24 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
   });
   const nextCalledRef = useRef(false);
   const choicesRef = useRef([]);
+  const timerPlaceholderRef = useRef(null);
+  const [isTimerFloating, setIsTimerFloating] = useState(false);
 
   const cenarioKey = ['cenario1', 'cenario2', 'cenario3', 'cenario4'][selectedScenario];
   const scenarioData = gameData[0][cenarioKey];
   const fase = scenarioData[scenarioIndex];
+
+  useEffect(() => {
+    const placeholder = timerPlaceholderRef.current;
+    if (!placeholder) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsTimerFloating(entry.intersectionRatio < 1);
+    }, { threshold: 1 });
+
+    observer.observe(placeholder);
+    return () => observer.disconnect();
+  }, [scenarioIndex]);
 
   const handleOptionClick = (optionIndex, buttonElement) => {
     // Toca som de sino
@@ -229,10 +243,12 @@ export default function Game({ profileName, onGameEnd, onLogout, onMenu, selecte
                   <h2 className='game__title'>{fase.title}</h2>
                 </div>
                 <div className="game__header">
-                <div className="timer__circle">
-                  <img className="timer__img" src={CronoImg} alt="Imagem do Cronômetro" />
+                <div ref={timerPlaceholderRef} className="timer__placeholder">
+                  <div className={`timer__circle${isTimerFloating ? " timer__circle--floating" : ""}`}>
+                    <img className="timer__img" src={CronoImg} alt="Imagem do Cronômetro" />
                     <span className="timer__text">{time}s</span>
-                  </div> 
+                  </div>
+                </div>
                   <button className='game__button' onClick={onMenu}>☰ Menu</button>
                   </div>
                 </div>

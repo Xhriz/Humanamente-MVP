@@ -1,23 +1,27 @@
 const feedbackText = [{
-    text: ` A equipe demonstrou um desempenho de alto nível neste cenário. As decisões foram tomadas com clareza de propósito, priorizando a segurança e a coordenação entre painel, campo, SMS e manutenção. A comunicação foi objetiva e tempestiva, o que favoreceu a construção de uma visão compartilhada da situação.
-
-Houve boa leitura do contexto operacional, com uso consistente das informações de processo, relatos de campo e alarmes de H₂S para embasar as escolhas. A liderança foi exercida de forma distribuída, envolvendo as pessoas certas nos momentos críticos e garantindo que nenhuma decisão ficasse isolada.
-
-O gerenciamento de riscos e da carga de trabalho se destacou: a equipe soube equilibrar ações técnicas (corte de carga, isolamento de equipamento, controle de inventário) com comportamentos não técnicos, mantendo o foco na proteção da vida, do meio ambiente e do patrimônio. Esse padrão de atuação é referência para situações futuras.`
+    text: ` A equipe demonstrou elevado domínio das competências Humanamente/NOTECH ao longo de todo o cenário. As decisões foram predominantemente preventivas, integradas e baseadas em risco. Houve forte preocupação com a construção da consciência situacional coletiva, compartilhamento de informações críticas, participação multidisciplinar e preservação das barreiras de segurança. equipe demonstrou comportamento compatível com organizações de alta confiabilidade. 
+    
+    As decisões adotadas favoreceram a identificação precoce dos riscos, o fortalecimento das barreiras de segurança e a prevenção da escalada do cenário. 
+    
+    O desempenho evidencia maturidade operacional, liderança compartilhada e aplicação consistente das competências Humanamente/NOTECH.
+    
+    A equipe demonstrou comportamento compatível com organizações de alta confiabilidade. As decisões adotadas favoreceram a identificação precoce dos riscos, o fortalecimento das barreiras de segurança e a prevenção da escalada do cenário. O desempenho evidencia maturidade operacional, liderança compartilhada e aplicação consistente das competências Humanamente/NOTECH. `
 },
 {
-    text: ` A equipe apresentou um desempenho consistente, com boas bases de atuação. Em diversos momentos, as decisões caminharam na direção esperada: houve preocupação com a segurança, busca por informações e esforço para manter a comunicação ativa entre as áreas.
-
-Em alguns pontos, no entanto, a coordenação poderia ter sido mais assertiva. Houve decisões em que a equipe demorou um pouco para alinhar prioridades ou hesitou em formalizar ações importantes, como declaração de condição anormal, isolamento de equipamentos e definição do tipo de parada.
-
-As habilidades não técnicas estão presentes, mas ainda podem ser fortalecidas: maior clareza nas mensagens, envolvimento mais ativo de todos no debriefing e uso mais estratégico dos recursos disponíveis (flare, SMS, engenharia) ajudarão a tornar a resposta mais ágil e robusta. O cenário mostrou que a equipe está no caminho certo, mas ainda tem espaço para consolidar um padrão de excelência.`
+    text: ` A equipe demonstrou boa capacidade de identificar riscos e responder às situações operacionais apresentadas. As decisões adotadas foram adequadas na maior parte dos eventos, porém algumas oportunidades de ampliação da análise, da comunicação ou do envolvimento multidisciplinar deixaram de ser exploradas. equipe apresentou bom desempenho geral e demonstrou capacidade adequada para controlar a evolução dos desvios operacionais. 
+    
+ Como oportunidade de melhoria, recomenda-se ampliar ainda mais a integração entre áreas, promover análises coletivas dos riscos e fortalecer mecanismos de compartilhamento das informações críticas antes que os desvios evoluam para condições mais severas.
+ 
+ A equipe apresentou bom desempenho geral e demonstrou capacidade adequada para controlar a evolução dos desvios operacionais. Como oportunidade de melhoria, recomenda-se ampliar ainda mais a integração entre áreas, promover análises coletivas dos riscos e fortalecer mecanismos de compartilhamento das informações críticas antes que os desvios evoluam para condições mais severas. `
 },
 {
-    text: ` O desempenho da equipe foi irregular ao longo do cenário. Em alguns eventos, foram tomadas decisões alinhadas às boas práticas, porém em outros momentos houve hesitação, falta de coordenação ou priorização insuficiente da segurança.
-
-A comunicação, em determinados trechos, se mostrou fragmentada: mensagens pouco claras, participação limitada de alguns membros e demora para envolver áreas-chave, como SMS e engenharia. Isso impactou a consciência situacional e a percepção coletiva do risco, aumentando o tempo de exposição ao evento.
-
-O gerenciamento da carga de trabalho e dos riscos oscilou: ações técnicas importantes foram executadas, mas nem sempre acompanhadas de um plano claro de quem faz o quê, quando e por quê. O cenário revelou pontos fortes individuais, porém a resposta como equipe ainda precisa de maior integração, assertividade e uso sistemático dos conceitos do Humanamente.`
+    text: ` A equipe conseguiu manter o controle básico das atividades da parada, porém apresentou predominância de ações corretivas e reativas. As decisões tomadas concentraram-se principalmente na solução dos problemas já materializados, com menor foco na prevenção e identificação antecipada dos desvios. 
+    
+    A equipe conseguiu conduzir as atividades essenciais da parada, porém demonstrou oportunidades relevantes de desenvolvimento das competências não técnicas. 
+    
+    Recomenda-se fortalecer a consciência situacional, aumentar a integração entre as áreas, melhorar os mecanismos de comunicação e ampliar a utilização de avaliações estruturadas de risco antes da tomada de decisão.
+    
+    A equipe conseguiu manter o acompanhamento da operação, porém adotou, em diversos momentos, estratégias predominantemente reativas. Recomenda-se desenvolver maior capacidade de antecipação, fortalecer a consciência situacional coletiva, estimular a comunicação entre áreas e ampliar a utilização de avaliações estruturadas de risco para evitar que pequenos desvios evoluam para situações críticas. `
 },
 {
     text: `Neste cenário, o desempenho global da equipe se mostrou frágil frente às demandas do evento. Em vários momentos, decisões críticas foram postergadas, delegadas sem clareza ou tomadas sem comunicação adequada com os demais envolvidos.

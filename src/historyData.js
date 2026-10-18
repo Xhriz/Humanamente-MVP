@@ -53,7 +53,7 @@ Embora alarmes estejam ocorrendo há vários turnos, a equipe ainda não percebe
 
 . Mudança do comportamento dinâmico do processo. 
 
-O cenário evolui progressivamente até culminar em um acidente de processo. 
+O cenário evolui progressivamente. 
 
 Vocês terão 5 minutos para cada decisão.`,
   image: imageGame4,
@@ -74,7 +74,7 @@ Vocês terão 5 minutos para cada decisão.`,
 
 . Impacto acumulado no caminho crítico e nas liberações operacionais.
 
-O cenário evolui progressivamente até culminar em atrasos relevantes, retrabalho e elevação do risco operacional na execução da parada. 
+O cenário evolui progressivamente. 
 
 Vocês terão 5 minutos para cada decisão.`,
   image: imageGame5,

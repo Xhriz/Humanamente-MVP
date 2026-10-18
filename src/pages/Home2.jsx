@@ -4,6 +4,8 @@ import image4 from "../assets/Image/3.webp";
 import image5 from "../assets/Image/4.webp";
 import image6 from "../assets/Image/5.webp";
 import imageObj from "../assets/Image/imgobj.webp";
+import operaimg from "../assets/Image/opera.webp";
+import mandalaimg from "../assets/Image/mandala.webp";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import Header from "../components/Header";
 
@@ -35,18 +37,25 @@ export default function Home2({ onLogout, profileName , onHome, onMenu}) {
        <main>
         <section className='description'>
           <img className='description__img' src={image2} alt="imagem da refinaria" />
+
           <div className='description__content'>
-            <h1 className='description__fase'>HumanaMente - Fase 2</h1>
-            <h2 className='description__title'>
-              Treine suas Habilidades <span>Não Técnicas</span>
-            </h2>
-            <p className='description__content-text'>
-              A Fase 2 do Programa HumanaMente envolve uma simulação completa de cenários que são representativos das operações do refino, gás, lubrificantes e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
-            </p>
-            <button className='description__button' onClick={onMenu}>
-              Voltar ao Menu
-            </button>
-          </div>
+                      <div className='description__overlay'>
+                      <h1 className="description__fase">HumanaMente - Fase 2</h1>
+                      <h2 className='description__title'>
+                        Treine suas Habilidades <span>Não Técnicas</span>
+                      </h2>
+                      <p className='description__content-text'>
+                        A Fase 2 do Programa HumanaMente envolve uma simulação completa de cenários que são representativos das operações do refino, gás, lubrificantes e fertilizantes, com ênfase especial em situações que demandam Processo Decisório em ambientes sob pressão, Comunicações, Coordenação, Trabalho em Equipe, Consciência Situacional, Habilidades Gerenciais e Liderança.
+                      </p>
+                      <button className='description__button' onClick={onMenu}>
+                          Voltar ao Menu
+                      </button>
+                      </div>
+                      <div className='description__image-container'>
+                      <img className='image__opera' src={operaimg} alt="objetivos"/>
+                      <img className='image__mandala' src={mandalaimg} alt="mandala"/>
+                      </div>
+                    </div>
         </section>
         <section className='objectives'>
           <img className='objectives__img' src={imageObj} alt="objetivos" />

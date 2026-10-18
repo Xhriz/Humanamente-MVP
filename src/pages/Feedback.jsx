@@ -151,7 +151,7 @@ export default function Feedback({onMenu, restart, profileName, scores, choices,
             <main className="feedback">
                <div className="feedback__header">
                 <div>
-                <h2 className="feedback__title">Feedback do Treinamento</h2>
+                <h2 className="feedback__title">Avaliação HumanaMente</h2>
                 <p className="feedback__text">Avaliação das suas competências não técnicas.</p>
                 </div>
                 <div className="feedback__results">

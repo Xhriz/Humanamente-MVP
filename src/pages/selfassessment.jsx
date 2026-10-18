@@ -25,64 +25,54 @@ export default function SelfAssessment({ profileName, onLogout, onMenu, onFeedba
       name: 'Comunicação',
       questions: [
         '1- Nossa equipe estabeleceu um canal de comunicação aberto e participativo durante o treinamento.',
-        '2- Nossa equipe incentivou que todos compartilhassem informações relevantes sobre a atividade.'
+        '2- Nossa equipe incentivou que todos compartilhassem informações relevantes sobre a atividade.',
+        '3- Nossa equipe ofereceu feedback apropriado (claro, respeitoso e útil) entre os membros durante o treinamento.',
+        '4- Nossa equipe colaborou em situações de necessidade, mantendo o foco na tarefa principal.',
       ]
     },
     {
       name: 'Cooperação/Trabalho em Equipe',
       questions: [
-        '3- Nossa equipe levou em consideração as sugestões dos colegas, mesmo quando havia opiniões divergentes.',
-        '4- Nossa equipe considerou as condições e limitações dos membros ao distribuir tarefas ou cobrar resultados.',
-        '5- Nossa equipe ofereceu feedback apropriado (claro, respeitoso e útil) entre os membros durante o treinamento.',
-        '6- Nossa equipe colaborou em situações de necessidade, mantendo o foco na tarefa principal.',
-        '7- Nossa equipe ofereceu suporte logístico e operacional para que as tarefas fossem realizadas.',
-        '8- Nossa equipe se colocou à disposição para ajudar membros que apresentaram dificuldades.'
+        '5- Nossa equipe levou em consideração as sugestões dos colegas, mesmo quando havia opiniões divergentes.',
+        '6- Nossa equipe se colocou à disposição para ajudar membros que apresentaram dificuldades.',
       ]
     },
     {
       name: 'Liderança/Habilidades Gerenciais',
       questions: [
-        '9- Nossa equipe manteve a calma quando surgiram conflitos ou divergências.',
-        '10- Nossa equipe buscou soluções construtivas para os conflitos em vez de alimentar discussões.',
-        '11- Nossa equipe focou no que era certo para a tarefa/segurança, e não em quem estava certo na discussão.',
-        '12- Nossa equipe assumiu a liderança quando necessário, sem atitudes autoritárias.',
-        '13- Nossa equipe influenciou positivamente o grupo para que as tarefas tivessem sucesso.',
-        '14- Nossa equipe exerceu comando de forma adequada à situação (nem omissa, nem excessiva).',
-        '15- Nossa equipe tomou decisões para garantir que as tarefas fossem atingidas com sucesso.',
-        '16- Nossa equipe contribuiu para que o grupo se sentisse reconhecido e valorizado pela supervisão.',
-        '17- Nossa equipe ajudou a elaborar e/ou seguir procedimentos operacionais padronizados.',
-        '18- Nossa equipe garantiu que os procedimentos e padrões estabelecidos fossem seguidos.',
-        '19- Nossa equipe interveio quando percebeu desvios em relação aos padrões e procedimentos.',
-        '20- Nossa equipe envolveu os membros no planejamento e na execução das tarefas.',
-        '21- Nossa equipe definiu claramente as intenções, objetivos e prioridades da atividade.',
-        '22- Nossa equipe distribuiu as atividades de forma equilibrada entre os membros.',
-        '23- Nossa equipe monitorou se o trabalho estava sendo realizado de forma apropriada.',
-        '24- Nossa equipe priorizou atividades secundárias para garantir recursos suficientes às atividades principais.',
-        '25- Nossa equipe reservou tempo suficiente para a realização adequada das atividades.',
+        '7- Nossa equipe manteve a calma quando surgiram conflitos ou divergências.',
+        '8- Nossa equipe focou no que era certo para a tarefa/segurança, e não em quem estava certo na discussão.',
+        '9- Nossa equipe assumiu a liderança quando necessário, sem atitudes autoritárias.',
+        '10- Nossa equipe influenciou positivamente o grupo para que as tarefas tivessem sucesso.',
+        '11- Nossa equipe tomou decisões para garantir que as tarefas fossem atingidas com sucesso.',
+        '12- Nossa equipe garantiu que os procedimentos e padrões estabelecidos fossem seguidos.',
+        '13- Nossa equipe interveio quando percebeu desvios em relação aos padrões e procedimentos.',
+        '14- Nossa equipe envolveu os membros no planejamento e na execução das tarefas.',
+        '15- Nossa equipe definiu claramente as intenções, objetivos e prioridades da atividade.',
+        '16- Nossa equipe distribuiu as atividades de forma equilibrada entre os membros.',
+        '17- Nossa equipe monitorou se o trabalho estava sendo realizado de forma apropriada.',
+        '18- Nossa equipe reservou tempo suficiente para a realização adequada das atividades.',
       ]
     },
     {
       name: 'Consciência Situacional',
       questions: [
-        '26- Nossa equipe monitorou os sistemas/processos que influenciam a operação durante o treinamento.',
-        '27- Nossa equipe buscou conhecimento sobre entradas, mudanças e impactos desses sistemas na atividade.',
-        '28- Nossa equipe buscou informações sobre como o ambiente externo poderia interferir no trabalho.',
-        '29- Nossa equipe compartilhou entre os membros informações relevantes sobre o ambiente externo.',
-        '30- Nossa equipe percebeu e compreendeu problemas possíveis ou futuros relacionados à atividade.',
-        '31- Nossa equipe procurou projetar as consequências das ações e decisões tomadas.'
+        '19- Nossa equipe monitorou os sistemas/processos que influenciam a operação durante o treinamento.',
+        '20- Nossa equipe buscou conhecimento sobre entradas, mudanças e impactos desses sistemas na atividade.',
+        '21- Nossa equipe buscou informações sobre como o ambiente externo poderia interferir no trabalho.',
+        '22- Nossa equipe percebeu e compreendeu problemas possíveis ou futuros relacionados à atividade.',
+        '23- Nossa equipe procurou projetar as consequências das ações e decisões tomadas.'
       ]
     },
     {
       name: 'Tomada de Decisão',
       questions: [
-        '32- Nossa equipe buscou informações suficientes para identificar corretamente os problemas.',
-        '33- Nossa equipe revisou em conjunto os fatores que causaram ou poderiam causar o problema.',
-        '34- Nossa equipe indicou um curso de ação claro para lidar com cada situação.',
-        '35- Nossa equipe apresentou alternativas de ação e discutiu essas opções entre os membros.',
-        '36- Nossa equipe ouviu sugestões dos membros antes de definir o curso de ação.',
-        '37- Nossa equipe confirmou o curso de ação escolhido, garantindo entendimento comum entre todos',
-        '38- Nossa equipe avaliou os riscos dos cursos de ação selecionados antes de executá‑los.',
-        '39- Nossa equipe comparou os riscos das opções alternativas antes de escolher uma delas.'
+        '24- Nossa equipe buscou informações suficientes para identificar corretamente os problemas.',
+        '25- Nossa equipe apresentou alternativas de ação e discutiu essas opções entre os membros.',
+        '26- Nossa equipe ouviu sugestões dos membros antes de definir o curso de ação.',
+        '27- Nossa equipe confirmou o curso de ação escolhido, garantindo entendimento comum entre todos',
+        '28- Nossa equipe avaliou os riscos dos cursos de ação selecionados antes de executá‑los.',
+        '29- Nossa equipe comparou os riscos das opções alternativas antes de escolher uma delas.'
       ]
     }
   ];

@@ -5,6 +5,8 @@ import image4 from "../assets/Image/3.webp";
 import image5 from "../assets/Image/4.webp";
 import image6 from "../assets/Image/5.webp";
 import imageObj from "../assets/Image/imgobj.webp";
+import operaimg from "../assets/Image/opera.webp";
+import mandalaimg from "../assets/Image/mandala.webp";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function CardItem({ image, title, description, delay }) {
@@ -48,6 +50,7 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
           <img className='description__img' src={image2} alt="imagem da refinaria" />
           
           <div className='description__content'>
+            <div className='description__overlay'>
             <h1 className="description__fase">HumanaMente - Fase 2</h1>
             <h2 className='description__title'>
               Treine suas Habilidades <span>Não Técnicas</span>
@@ -58,7 +61,13 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
             <button className='description__button' onClick={onStartGame}>
               Iniciar Treinamento →
             </button>
+            </div>
+            <div className='description__image-container'>
+            <img className='image__opera' src={operaimg} alt="objetivos"/>
+            <img className='image__mandala' src={mandalaimg} alt="mandala"/>
+            </div>
           </div>
+          
         </section>
         <section className='objectives'>
           <img className='objectives__img' src={imageObj} alt="objetivos" />

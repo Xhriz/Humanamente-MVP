@@ -54,7 +54,7 @@
     border-radius: 10px;
     background: rgb(9, 15, 26);
     width: 520px;
-    height: 620px;
+  
     padding: 20px;
 
 }
@@ -87,7 +87,7 @@
     border: solid 2px rgb(125, 241, 255);
     border-radius: 10px;
     background: rgb(9, 15, 26);
-    height:620px;
+    height:100%;
     width: 500px;
     padding: 20px;
 
