@@ -52,8 +52,8 @@ export default function Home2({ onLogout, profileName , onHome, onMenu}) {
                       </button>
                       </div>
                       <div className='description__image-container'>
-                      <img className='image__opera' src={operaimg} alt="objetivos"/>
                       <img className='image__mandala' src={mandalaimg} alt="mandala"/>
+                      <img className='image__opera' src={operaimg} alt="objetivos"/>        
                       </div>
                     </div>
         </section>

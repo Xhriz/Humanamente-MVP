@@ -30,7 +30,7 @@ function SubCardItem({ title, children, delay }) {
   );
 }
 
-export default function Home({ onStartGame, onLogin, scrolled }) {
+export default function Home({ onStartGame, scrolled }) {
   return (
     <>
       <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
@@ -63,8 +63,8 @@ export default function Home({ onStartGame, onLogin, scrolled }) {
             </button>
             </div>
             <div className='description__image-container'>
+            <img className='image__mandala' src={mandalaimg} alt="mandala"/>  
             <img className='image__opera' src={operaimg} alt="objetivos"/>
-            <img className='image__mandala' src={mandalaimg} alt="mandala"/>
             </div>
           </div>
           
